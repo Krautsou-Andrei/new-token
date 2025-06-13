@@ -1,7 +1,9 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useTonWallet } from '@tonconnect/ui-react';
 
-import { useGetListJettons } from '@/shared/api/hooks/jetton/use-get-list-jettons';
+import { AppTransactionModal } from '@/widgets/app-transaction-modal';
+
+import { useModalStore } from '@/shared/lib/persistance/modal.store';
 import { AppLayoutBound } from '@/shared/ui/app-layout-bound';
 import { AppTonButton } from '@/shared/ui/app-ton-button';
 
@@ -10,6 +12,7 @@ import { Steiking } from './steiking';
 
 export const AirdropPage = () => {
   const wallet = useTonWallet();
+  const { isSuccessModal, closeSuccessModal } = useModalStore();
 
   return (
     <AppLayoutBound
@@ -55,6 +58,10 @@ export const AirdropPage = () => {
           )}
         </Box>
       </Flex>
+      <AppTransactionModal
+        isOpen={isSuccessModal}
+        onClose={closeSuccessModal}
+      />
     </AppLayoutBound>
   );
 };

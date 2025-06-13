@@ -12,8 +12,8 @@ export const AppButtonBorderGradient = ({
     <div
       style={{
         display: 'inline-block',
-        borderRadius: '81px', // Закругленные края
-        padding: '0px', // Толщина границы
+        borderRadius: '81px',
+        padding: '0px',
         border: '2px dashed',
         borderColor: 'black',
         background:

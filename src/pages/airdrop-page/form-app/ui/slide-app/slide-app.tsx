@@ -1,5 +1,7 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 
+import { useModalStore } from '@/shared/lib/persistance/modal.store';
+
 import { SLIDES } from '../../const';
 
 type SlideAppProps = {
@@ -8,6 +10,8 @@ type SlideAppProps = {
 };
 
 export const SlideApp = ({ title, balance }: SlideAppProps) => {
+  const { openSuccessModal } = useModalStore();
+
   return (
     <Box
       pt={5}
@@ -21,6 +25,7 @@ export const SlideApp = ({ title, balance }: SlideAppProps) => {
           size={'fit'}
           color={'text.secondary'}
           fontFamily={title === SLIDES[1].title ? 'Inter' : 'Rhythmic'}
+          onClick={() => openSuccessModal()}
         >
           <Text> {title} + </Text>
         </Button>
