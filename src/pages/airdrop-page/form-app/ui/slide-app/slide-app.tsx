@@ -18,15 +18,16 @@ export const SlideApp = ({ title, balance, ...props }: SlideAppProps) => {
       fontFamily={'beatstreetregular'}
       fontSize={{ base: '28px', sm: '32px' }}
       fontWeight={400}
+      color={'text.secondary'}
       {...props}
     >
       <Flex direction={'column'} alignItems={'center'}>
         <Button
           variant={'iconDefault'}
           size={'fit'}
-          color={'text.secondary'}
           fontFamily={title === SLIDES[1].title ? 'Inter' : 'Rhythmic'}
           onClick={() => openSuccessModal()}
+          color={'inherit'}
         >
           <Text> {title} + </Text>
         </Button>

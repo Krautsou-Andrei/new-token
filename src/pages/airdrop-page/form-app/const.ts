@@ -1,6 +1,6 @@
 export const SLIDES = [
   { title: 'Ton' },
-  { title: 'SBP' },
+  { title: 'СБП' },
   { title: 'USDT' },
   { title: 'ЧХЗ' },
 ];
