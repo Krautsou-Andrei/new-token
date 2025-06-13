@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
+import { useState } from 'react';
+
 import { Box, Button, Flex, Progress, Text } from '@chakra-ui/react';
 
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
@@ -10,6 +12,8 @@ import { AppTextGradient } from '@/shared/ui/app-text-gradient';
 import { SLIDES } from '../form-app/const';
 
 export const Steiking = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <Box>
       <Flex justifyContent={'center'} w={'full'}>
@@ -34,10 +38,14 @@ export const Steiking = () => {
             slidesPerView={3}
             spaceBetween={12}
             autoplay={{ delay: 3000 }}
+            onSlideChange={(slider) => {
+              setActiveIndex(slider.activeIndex);
+            }}
           >
-            {SLIDES.map((token) => (
+            {SLIDES.map((token, index) => (
               <SwiperSlide key={token.title}>
                 <Button
+                  pt={activeIndex + 2 === index + 1 ? 0 : 2}
                   fontSize={{ base: '20px', sm: '32px' }}
                   variant={'iconDefault'}
                   size={'fit'}
