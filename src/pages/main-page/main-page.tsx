@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
 import { Box, Button, Flex, Radio, RadioGroup } from '@chakra-ui/react';
+import { useNavigate } from '@tanstack/react-router';
 
+import { ROUTES } from '@/shared/consts';
 import { AppIcon } from '@/shared/ui/app-icon';
 import { AppLayoutBound } from '@/shared/ui/app-layout-bound';
 
@@ -10,6 +12,7 @@ import styles from './main.module.css';
 
 export const MainPage = () => {
   const [value, setValue] = useState('1');
+  const navigate = useNavigate();
 
   return (
     <AppLayoutBound
@@ -71,6 +74,9 @@ export const MainPage = () => {
             sx={{
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
+            }}
+            onClick={() => {
+              navigate({ to: ROUTES.AIRDROP });
             }}
           >
             Stake now
