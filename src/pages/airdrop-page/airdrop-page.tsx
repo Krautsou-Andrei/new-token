@@ -1,3 +1,5 @@
+import { relative } from 'path';
+
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useTonWallet } from '@tonconnect/ui-react';
 
@@ -52,9 +54,24 @@ export const AirdropPage = () => {
               <Steiking />
             </>
           ) : (
-            <Flex w={'full'} justifyContent={'center'}>
-              <AppTonButton />
-            </Flex>
+            <>
+              <Flex w={'full'} justifyContent={'center'} mb={10}>
+                <AppTonButton />
+              </Flex>
+              <Box pos={'relative'}>
+                <FormApp />
+                <Box
+                  pos={'absolute'}
+                  w={'full'}
+                  h={'full'}
+                  top={0}
+                  left={0}
+                  bg={'black'}
+                  zIndex={10}
+                  opacity={0.8}
+                />
+              </Box>
+            </>
           )}
         </Box>
       </Flex>
