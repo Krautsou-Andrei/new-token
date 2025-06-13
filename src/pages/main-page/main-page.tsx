@@ -26,6 +26,7 @@ export const MainPage = () => {
         bgSize="cover"
         bgPosition="center"
         height="100dvh"
+        pb={10}
       >
         <Box flex={1} pt={'110px'}>
           <Flex
@@ -35,7 +36,7 @@ export const MainPage = () => {
           >
             <Flex
               gap={2}
-              fontSize={'24px'}
+              fontSize={{ base: '20px', sm: '24px' }}
               lineHeight={'100%'}
               fontWeight={400}
               fontFamily={'Inter'}
@@ -46,7 +47,7 @@ export const MainPage = () => {
             <Button
               variant={'iconDefault'}
               size={'fit'}
-              fontSize={'24px'}
+              fontSize={{ base: '20px', sm: '24px' }}
               lineHeight={'100%'}
               fontWeight={400}
               fontFamily={'Inter'}
@@ -64,7 +65,7 @@ export const MainPage = () => {
             p={3}
             variant={'iconDefault'}
             size={'fit'}
-            fontSize={'96px'}
+            fontSize={{ base: '72px', sm: '96px' }}
             lineHeight={'100%'}
             fontWeight={400}
             fontFamily={'beatstreetregular'}
@@ -121,7 +122,7 @@ export const MainPage = () => {
                     maxH={'8px'}
                     rounded="48px"
                     sx={{
-                      background: `${String(index + 1) === value ? 'linear-gradient(90deg,  #00FF99,#7B00FF)' : '#2B314E'}`,
+                      background: `${String(index + 1) <= value ? 'linear-gradient(90deg,  #00FF99,#7B00FF)' : '#2B314E'}`,
                       color: 'white',
                       border: 'none',
                       display: 'block',
@@ -147,7 +148,7 @@ export const MainPage = () => {
             p={3}
             variant={'iconDefault'}
             size={'fit'}
-            fontSize={'64px'}
+            fontSize={{ base: '48px', sm: '64px' }}
             lineHeight={'100%'}
             fontWeight={400}
             fontFamily={'beatstreetregular'}
