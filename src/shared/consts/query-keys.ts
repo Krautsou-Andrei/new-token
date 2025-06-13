@@ -1,6 +1,7 @@
 export const QUERY_KEYS = {
   ALL_VIDEO: 'allVideo',
   AWARDS: 'awards',
+  BALANCES: 'balances',
   LIDEER_VIDEO: 'liderVideo',
   ME: 'me',
   REF: 'ref',

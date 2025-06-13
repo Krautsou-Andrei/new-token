@@ -20,6 +20,8 @@ export const DEFAULT = {
   HEIGHT_ICON: 24,
   WIDHT_ICON: 24,
 
+  IS_NOT_VERIFICATION: 'blacklist',
+
   CHAT: 'https://t.me/+acJqgo60aRs0ZTky',
   CHAT_ENG: 'https://t.me/+U5bEnl0q2phkYjdi',
   INST_ENG: 'https://instagram.com/hypefactory.io_world',

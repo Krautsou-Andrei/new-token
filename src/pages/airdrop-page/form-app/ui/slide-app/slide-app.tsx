@@ -4,9 +4,10 @@ import { SLIDES } from '../../const';
 
 type SlideAppProps = {
   title: string;
+  balance?: string;
 };
 
-export const SlideApp = ({ title }: SlideAppProps) => {
+export const SlideApp = ({ title, balance }: SlideAppProps) => {
   return (
     <Box
       pt={5}
@@ -30,7 +31,7 @@ export const SlideApp = ({ title }: SlideAppProps) => {
           fontWeight={400}
           fontFamily={'tektur'}
         >
-          5000.00
+          {balance}
         </Text>
       </Flex>
     </Box>
