@@ -13,6 +13,7 @@ import { SLIDES } from '../form-app/const';
 
 export const Steiking = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeToken, setActiveToken] = useState(SLIDES[0].title);
 
   return (
     <Box>
@@ -43,16 +44,24 @@ export const Steiking = () => {
             }}
           >
             {SLIDES.map((token, index) => (
-              <SwiperSlide key={token.title}>
+              <SwiperSlide
+                key={token.title}
+                style={{ display: 'flex', justifyContent: 'center' }}
+              >
                 <Button
-                  pt={activeIndex + 2 === index + 1 ? 0 : 2}
+                  px={activeToken === token.title ? 4 : 0}
+                  mt={activeIndex + 2 === index + 1 ? 0 : 2}
                   fontSize={{ base: '20px', sm: '32px' }}
                   variant={'iconDefault'}
                   size={'fit'}
                   fontFamily={
                     token.title === SLIDES[1].title ? 'Inter' : 'Rhythmic'
                   }
+                  border={activeToken === token.title ? '1px dashed' : ''}
+                  borderColor={'background.secondary'}
+                  color={activeToken === token.title ? 'text.secondary' : ''}
                   fontWeight={400}
+                  onClick={() => setActiveToken(token.title)}
                 >
                   {token.title}
                 </Button>
