@@ -1,4 +1,4 @@
-import { defineStyle } from '@chakra-ui/react';
+import { defineStyle, textDecoration } from '@chakra-ui/react';
 import type { SystemStyleInterpolation } from '@chakra-ui/styled-system';
 
 import textStyles from '../../foundations/textStyles';
@@ -8,7 +8,7 @@ function variant(
   color: string
 ): SystemStyleInterpolation {
   return defineStyle({
-    ...textStyles.button_lg_700,
+    ...textStyles.text_lg_400,
     backgroundColor,
     w: 'full',
     borderRadius: 'full',
@@ -127,6 +127,7 @@ const iconDefault = {
   border: 'none',
   bg: 'transparent',
   color: 'constant.white',
+  textTransform: 'unset',
 };
 
 const iconSetting = {

@@ -27,6 +27,11 @@ export default {
     fontWeight: 600,
     lineHeight: '120%',
   },
+  text_lg_400: {
+    fontSize: '24px',
+    fontWeight: 700,
+    lineHeight: '100%',
+  },
   text_lg_700: {
     fontSize: '24px',
     fontWeight: 700,

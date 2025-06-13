@@ -77,6 +77,7 @@ export interface SpritesMap {
     | 'presentation-chart'
     | 'profile_add'
     | 'profile'
+    | 'setting'
     | 'slash'
     | 'slider-step-stair'
     | 'status-up-black'
@@ -196,6 +197,7 @@ export const SPRITES_META: {
     | 'presentation-chart'
     | 'profile_add'
     | 'profile'
+    | 'setting'
     | 'slash'
     | 'slider-step-stair'
     | 'status-up-black'
@@ -315,6 +317,7 @@ export const SPRITES_META: {
     'presentation-chart',
     'profile_add',
     'profile',
+    'setting',
     'slash',
     'slider-step-stair',
     'status-up-black',

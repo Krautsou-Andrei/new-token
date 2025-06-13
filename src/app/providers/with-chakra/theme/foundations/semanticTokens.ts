@@ -44,7 +44,7 @@ export default {
       },
       primary: {
         background: COLOR.LIME,
-        foreground: COLOR.BLACK,
+        foreground: COLOR.COD_GRAY,
       },
       secondary: {
         background: { default: 'transparent', _dark: '#10161f' },
