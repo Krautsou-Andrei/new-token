@@ -1,5 +1,3 @@
-import { useApptaskCard } from '@/pages/tasks-page/ui/app-task-card/hooks/use-app-task-card';
-
 import type { HTMLAttributes } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -29,7 +27,6 @@ export const AppSpecialTask = ({
   isClaimed,
   isPending,
 }: AppSpecialTaskProps) => {
-  const { functions } = useApptaskCard();
   const { t } = useTranslation();
 
   return (
@@ -47,13 +44,7 @@ export const AppSpecialTask = ({
         )}
 
         {!isClaimed && !isPending && (
-          <Button
-            variant="primarySm"
-            width={'fit-content'}
-            onClick={() => {
-              functions.handleStartTask(task);
-            }}
-          >
+          <Button variant="primarySm" width={'fit-content'}>
             {t(LOCAL_TEXT.BUTTON_START)}
           </Button>
         )}
