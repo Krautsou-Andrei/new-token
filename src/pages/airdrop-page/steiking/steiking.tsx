@@ -84,7 +84,7 @@ export const Steiking = () => {
         }}
         value={20}
       />
-      <Flex justifyContent={'space-between'} gap={4} mb={{ base: 5, sm: 10 }}>
+      <Flex justifyContent={'space-between'} gap={4} mb={{ base: 10, sm: 15 }}>
         <AppTextGradient
           lineHeight={'100%'}
           fontFamily={'Rhythmic'}
@@ -108,7 +108,7 @@ export const Steiking = () => {
           </Text>
         </Flex>
       </Flex>
-      <Flex justifyContent={'center'} w={'full'} mb={{ base: 10, sm: 15 }}>
+      <Flex justifyContent={'center'} w={'full'} mb={{ base: 15, sm: 20 }}>
         <div
           style={{
             display: 'inline-block',

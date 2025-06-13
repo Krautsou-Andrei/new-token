@@ -1,4 +1,4 @@
-import { defineStyle, textDecoration } from '@chakra-ui/react';
+import { defineStyle } from '@chakra-ui/react';
 import type { SystemStyleInterpolation } from '@chakra-ui/styled-system';
 
 import textStyles from '../../foundations/textStyles';
