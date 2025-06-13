@@ -1,0 +1,756 @@
+{
+  "friends_page": {
+    "ambasador": {
+      "value": "Стань Амбассадором Hype Factory",
+      "highlight": "Амбассадором"
+    },
+    "invite": "Приглашай друзей и получай бонусы",
+    "ambasador_card_one": {
+      "value": "Дарим 10.000 ХР за каждого друга по ссылке",
+      "highlight": "10.000 ХР"
+    },
+    "ambasador_card_two": {
+      "value": "10.000 ХР начислим твоим друзьям за регистрацию",
+      "highlight": "10.000 ХР"
+    },
+    "ambasador_card_three": {
+      "value": "Получай 10% с дохода и инвестиций друзей",
+      "highlight": "10%"
+    },
+    "joined": "Присоединился {{value}}",
+    "shared_friend": "Поделиться с другом",
+    "you_bonus": "Твой бонус амбассадора",
+    "you_friends": "Твои друзья"
+  },
+  "home_page": {
+    "become_investor": {
+      "value": "Стань ранним инвестором H2E и увеличить шанс на Airdrop",
+      "highlight": "H2E"
+    },
+    "connect_wallet": "Подключай кошелёк",
+    "daily_bonus": "Ежедневный\n бонус",
+    "invite_friends": "Приглашай\n друзей",
+    "get_awards": "Получай\n награды",
+    "go_to_tomorrow": "приходите завтра за наградой",
+    "good_morning": "Доброе утро",
+    "how_to_pick_up": "Как зарабатывать?",
+    "subscribe_chanel": "Подписывайся на канал",
+    "take": "Забрать",
+    "view_reels": "Выкладывай Reels"
+  },
+  "income_page": {
+    "award_received": "награда получена",
+    "create_new_video": "Создать новое видео",
+    "forward_you": "опережает вас",
+    "get_award": "получить награду",
+    "last_public_video": "Вы выложили уже {{value}} видео, выложите ещё {{valueTwo}} и получите бонус 15.000 XP",
+    "one_series": "за серию",
+    "go_tommorow": "Возвращайтесь завтра и продолжите серию, чтобы получить ещё больше {{value}}",
+    "lost_you": "отстаёт от вас",
+    "lider_board_card": {
+      "value": "вы на {{value}} месте",
+      "highlight": "{{value}} месте"
+    },
+    "lider_board_champion": "Стань чемпионом месяца по количеству выложенных видео",
+    "lider_board_heading": "лидерборд",
+    "prize_fund": "призовой фонд",
+    "public": "Опубликовано",
+    "published": {
+      "all": "Все",
+      "active": "Активные",
+      "done": "Завершенные"
+    },
+    "published_video": "Опубликованные видео",
+    "series_video": "Серия видео",
+    "video_instruction": "Видео-инструкция",
+    "view_instruction": "Посмотрите инструкцию и получите награду",
+    "views": "набирает просмотры",
+    "video_positions": {
+      "step_one": {
+        "title": "Шаг 1. Выбери одно видео",
+        "set_link_tik_tok": "Вставить ссылку из Youtube или Tiktok",
+        "link_titk_tok": "Ссылка должна быть из Tiktok или Youtube",
+        "or": "или",
+        "video_size": "видео не более 100МБ и full HD"
+      },
+      "step_two": {
+        "title": "Шаг 2. Настройка рекламного баннера",
+        "position_plashka": "Расположение плашки"
+      },
+      "step_three": {
+        "title": "Шаг 3. Выложи видео",
+        "block_ref": {
+          "title": "Ваша реферальная ссылка",
+          "descriptions": {
+            "value": "Обязательно вставь свою реферальную ссылку в шапку профиля твоего аккаунта",
+            "highlight": "Обязательно"
+          }
+        },
+        "block_video": {
+          "title": "Описание для видео",
+          "description": "Добавь следующее описание к видео",
+          "title_shared": "Интересное видео",
+          "text_to_copy": "Получи 10.000 поинтов в приложении Hype Factory - ссылка в шапке профиля Также подпишись на @semen_bikbaev и получи ещё 10.000 поинтов"
+        },
+        "block_shared": { "title": "Поделиться видео" }
+      },
+      "step_four": {
+        "title": "Шаг 4. Финальный. Вставь ссылку на выложенное видео",
+        "block_link": {
+          "description": "Вставь ссылку на опубликованное видео",
+          "placeholder": "Место для ссылки"
+        }
+      },
+      "modal_success": {
+        "title": "+5 000 {{value}} \n Поздравляем!",
+        "button": "Создать еще",
+        "descriptions": "Твоё видео успешно добавлено.\n Ты получишь {{value}} когда оно наберёт\n 1000 просмотров"
+      },
+      "video_download": "Видео скачивается... немного подождите",
+      "video_download_server": "Видео загружается на сервер",
+      "video_process": "Видео обрабатывается",
+      "top": "Сверху",
+      "bottom": "Снизу",
+      "title": "Указать отступ"
+    }
+  },
+  "investor_page": {
+    "video": {
+      "title": { "value": "для ИНВЕСТОРА", "highlight": "ИНВЕСТОРА" },
+      "dscriptions": "Все что ты должен знать как инвестор о проекте за 10 минут"
+    },
+    "pre_sale": {
+      "title": {
+        "value": "PRE-SALE Н2Е токена открыт",
+        "highlight": "Н2Е токена"
+      },
+      "description": "Если ты первый, получаешь лучшие условия потенциал прибыли",
+      "pre_sale_card": {
+        "one": "На блокчейне Solana",
+        "two": "Utility-token с реальным спросом",
+        "three": "Минимальный вход от 100$"
+      }
+    },
+    "what_gives_token": {
+      "cards": {
+        "one": "Рекламодатель запуская кампанию — платит {{value}}",
+        "two": "Пользователь, публикуя видео и рекламируя проект — получает {{value}}",
+        "three": "Чем больше пользователей и брендов, тем выше оборот токена"
+      },
+      "descriptions": "Токен {{value}} это ключевой элемент всей бизнес-модели Hype Factory",
+      "title": {
+        "one": {
+          "value": "Что даёт токен {{value}} и в чём его ",
+          "highlight": "токен {{value}}"
+        },
+        "two": {
+          "value": "сила",
+          "highlight": "сила"
+        }
+      }
+    },
+    "utility": {
+      "descriptions": "C ежедневным спросом, настоящей полезностью встроенной потребностью",
+      "interest_cards": {
+        "one": "трейдеров",
+        "two": "бирж",
+        "three": "инвесторов"
+      },
+      "interest_title": "Отсюда интерес к токену",
+      "title": {
+        "one": {
+          "value": "{{value}} полноценный utility ",
+          "highlight": "{{value}}"
+        },
+        "two": {
+          "value": "актив",
+          "highlight": "актив"
+        }
+      },
+      "utility_cards": {
+        "one": "Органический объём торгов",
+        "two": "Живой рынок",
+        "three": "Естественный спрос "
+      }
+    },
+    "digital_heading": {
+      "value": "Рынок digital рекламы в мире",
+      "highlight": "Рынок"
+    },
+    "digital_sub_heading": {
+      "value": "миллиардов в год",
+      "highlight": "и продолжает расти"
+    },
+    "digital_market": {
+      "value": "Даже 0.1% этого рынка дает огромный потенциал проекту",
+      "highlight": "0.1%"
+    },
+    "token_demand": {
+      "cards": {
+        "one": "Каждое видео  это охват",
+        "two": "Каждая реклама это контакт с потенциальным инвестором",
+        "three": "Каждый просмотр потенциально +1 покупатель Н2Е"
+      },
+      "footer": "Мы не зависим от сторонних подрядчиков и умеем продвигать себя сами масштабно",
+      "title": {
+        "value": "Как мы сами создаём спрос на токен?",
+        "highlight": "создаём спрос"
+      },
+      "sub_title": {
+        "one": "У проекта своя маркетинговая машина, основанная на децентрализованной силе сообщества",
+        "two": "После листинга люди по всему миру начнут публиковать видео с посылом «Покупай токен {{value}} на криптобирже»"
+      }
+    },
+    "model_title": {
+      "value": "дефляционная модель это ",
+      "highlight": "дефляционная"
+    },
+    "model_sub_title": {
+      "value": "фундаментальная сила токена ",
+      "highlight": "фундаментальная"
+    },
+    "model_steps": {
+      "one": {
+        "cardTitle": "Выкуп с рынка",
+        "descriptions": "На часть прибыли от рекламодателей выкупаются токены с рынка (buyback)"
+      },
+      "two": {
+        "cardTitle": "Экосистемный резерв",
+        "descriptions": "Токены не возвращаются в рынок"
+      },
+      "three": {
+        "cardTitle": "Дефляция",
+        "descriptions": "Возникает дефицит токенов в свободном обращении"
+      },
+      "four": {
+        "cardTitle": "Рост",
+        "descriptions": "Спрос растет вместе с числом рекламодателей и пользователей"
+      }
+    },
+    "mechanics_title": "Эта механика",
+    "mechanics_card": {
+      "one": "Дает токену стабильность",
+      "two": "Поддерживает спрос на токен",
+      "three": "Помогает регулировать стоимость Н2Е на рынке"
+    },
+    "tokenomic": {
+      "cards": {
+        "one": {
+          "title": "№ 1 Разгон токена",
+          "titleHighlight": "№ 1",
+          "descriptions": "Даём время для разгона и роста за счёт блокировки токена на 30 дней после листинга ",
+          "highlight": ""
+        },
+        "two": {
+          "title": "№ 2 Устойчивый график",
+          "titleHighlight": "№ 2",
+          "descriptions": "Ежедневная линейная разблокировка — защищает от давления на цену и вызывает интерес трейдеров и инвесторов",
+          "highlight": ""
+        },
+        "three": {
+          "title": "№ 3 Долгосрочные планы",
+          "titleHighlight": "№ 3",
+          "descriptions": "Команда и экосистема получают токены самыми последними, планируем и строим в долгую",
+          "highlight": ""
+        },
+        "four": {
+          "title": "№ 4 Pre-Sale от {{value}}$",
+          "titleHighlight": "№ 4",
+          "descriptions": "Сделали минимальный порог участия от {{value}}$, больше держателей токена выше устойчивость проекта",
+          "highlight": ""
+        }
+      },
+      "title": {
+        "value": "Продуманная токеномика и защита инвесторов",
+        "highlight": "Продуманная токеномика"
+      }
+    },
+    "risk": {
+      "title": {
+        "value": "Важно Инвестиции на ранней стадии всегда риск",
+        "highlight": "Важно"
+      },
+      "descriptions": {
+        "value": "Мы не обещаем 100 тысяч иксов — мы создаём проект, у которого есть",
+        "highlight": "мы создаём проект"
+      },
+      "not_garanty": "Не бывает 100% гарантий. Ты сам принимаешь решение"
+    },
+    "risk_cards": {
+      "one": "Продукт с реальным спросом",
+      "two": "Чёткое видение, как развивать токен",
+      "three": "Сильная команда и стратегия",
+      "four": "Понятная бизнес-модель"
+    },
+    "token_launch": {
+      "cards": {
+        "one": {
+          "value": "Общаемся с рекламодателями и делаем отбор первых партнёров",
+          "highlight": { "one": "отбор", "two": "партнёров" }
+        },
+        "two": {
+          "value": "До листинга на бирже — выплаты пользователям от сторонних рекламодателей будут в USDT",
+          "highlight": ""
+        },
+        "three": {
+          "value": "Заранее ведём переговоры с топовыми биржами в ожидании позитивной стадии рынка",
+          "highlight": "позитивной стадии рынка"
+        },
+        "four": {
+          "value": "Если условия не устроят — план B: децентрализованные биржи Solana",
+          "highlight": { "one": "план B", "two": "децентрализованные биржи" }
+        },
+        "five": {
+          "value": "Более 250 лидеров мнений крипторынка ждут запуска проекта, чтобы начать его продвигать",
+          "highlight": { "one": "250 лидеров", "two": "ждут запуска" }
+        }
+      },
+      "title": {
+        "value": "активно готовимся к запуску токена",
+        "highlight": "активно"
+      }
+    },
+    "already": {
+      "value": "уже сегодня платформа ",
+      "highlight": { "one": "уже", "two": "платформа" }
+    },
+    "already_price": {
+      "value": "имеет реальную ценность",
+      "highlight": "ценность"
+    },
+    "already_build": "Мы строим не быстрый запуск, а долгосрочную экосистему, которая может изменить рынок рекламы и создать новый стандарт в продвижении брендов",
+    "pre_sale_open": {
+      "title": {
+        "value": "Pre-Sale открыт",
+        "highlight": "открыт"
+      },
+      "description": {
+        "one": {
+          "value": "Ты можешь войти в проект на ранней стадии",
+          "highlight": "ранней стадии"
+        },
+        "two": {
+          "value": ", по минимальной цене, до выхода на биржи",
+          "highlight": "до выхода на биржи"
+        }
+      },
+      "pre_sale_open_card": {
+        "one": {
+          "value": "Мы ищем не просто случайных инвесторов, в тех ",
+          "highlight": "Мы ищем"
+        },
+        "two": {
+          "value": "кто верит в проект готов идти с нами ",
+          "highlight": "кто верит"
+        },
+        "three": {
+          "value": "в долгую",
+          "highlight": "в долгую"
+        }
+      }
+    },
+    "take_part": {
+      "button": "КУПИТЬ ТОКЕН",
+      "error": "Сумма должна быть не менее {{value}}",
+      "field_token": "Вы получите токенов {{value}}",
+      "field_usdt": "Сумма USDT",
+      "field_usdt_placeholder": "Введи сумму к покупке",
+      "oferts": {
+        "one": "Совершая покупку вы соглашаетесь с",
+        "two": "офертой",
+        "three": "сервиса"
+      },
+      "price_token": "Цена токена {{value}}",
+      "sub_title": "Сумма участия от {{value}}$ до {{valueTwo}}$",
+      "title": {
+        "value": "Участвовать в пресейле",
+        "highlight": "Участвовать"
+      }
+    },
+    "support": "Если остались вопросы или\n нужна помощь в покупке\n жми кнопку ниже"
+  },
+  "creator_page": {
+    "video": {
+      "descriptions": "Посмотри видео и узнай о проекте за 3 мин"
+    },
+    "first_commercial": {
+      "title": {
+        "value": "Первая в мире автоматизированная рекламная платформа",
+        "highlight": "Первая в мире"
+      },
+      "cards": {
+        "one": {
+          "title": "Рекламодатель",
+          "description": "Создаёт задание с рекламным баннером"
+        },
+        "two": {
+          "title": "Пользователь",
+          "description": "Публикует короткое видео с баннером в тикток, shorts. reels"
+        },
+        "three": {
+          "title": "Рекламодатель",
+          "description": "Получает узнаваемость и новых пользователей"
+        },
+        "four": {
+          "title": "Пользователь",
+          "description": "Получает доход за просмотры"
+        }
+      }
+    },
+    "idea": {
+      "title": { "value": "Идея простая", "highlight": "простая" },
+      "descriptions": "Бренды платят за охваты, а пользователи зарабатывают на их создании"
+    },
+    "comfort_user": {
+      "title": { "value": "Удобно пользователю", "highlight": "пользователю" },
+      "cards": {
+        "one": "Можно использовать любое популярное видео для публикации",
+        "two": "Сервис автоматически добавит баннер рекламодателя",
+        "three": "Делись видео в любой соц-сети по одной кнопке",
+        "four": "Система сама фиксирует просмотры и делает выплаты"
+      }
+    },
+    "commercial": {
+      "title": "Кто будет\n рекламодателем?",
+      "descriptions": { "value": "В первую очередь", "highlight": "первую" },
+      "tabs": {
+        "one": "крипто компании",
+        "two": {
+          "value": "большие",
+          "highlight": "бюджеты"
+        },
+        "three": {
+          "value": "нужны новые",
+          "highlight": "пользователи"
+        },
+        "four": {
+          "value": "важно сформировать",
+          "highlight": "доверие"
+        }
+      },
+      "sub_title": {
+        "one": {
+          "value": "Поэтому мы запускаем свой токен {{value}} ",
+          "highlight": "{{value}}"
+        },
+        "two": {
+          "value": "— HYPE TO EARN, для расчётов без ограничений по всему миру",
+          "highlight": "для расчётов без ограничений"
+        }
+      },
+      "descriptions_second": {
+        "value": "Во вторую очередь",
+        "highlight": "вторую"
+      },
+      "tabs_second": {
+        "one": "маркетплейсы",
+        "two": "игровая индустрия ",
+        "three": "финтех ",
+        "four": "банкинг ",
+        "five": "образование"
+      },
+      "all": {
+        "value": "все кому нужны миллиардные охваты в соц сетях",
+        "highlight": "миллиардные"
+      }
+    },
+    "our_goals": {
+      "title": {
+        "value": "Мы верим в инструмент и сами являемся рекламодателями на своей платформе",
+        "highlight": "инструмент"
+      },
+      "our_goal": "Наша цель",
+      "goal": "10 млн",
+      "goal_users": "пользователей и миллиарды охватов по всему миру"
+    },
+    "can_you": {
+      "title": { "value": "Прямо сейчас ты можешь", "highlight": "сейчас" },
+      "cards": {
+        "one": "Быть в числе первых пользователей HYPE FACTORY",
+        "two": "Получать вознаграждение за просмотры",
+        "three": "Выполнять простые задания за вознаграждения",
+        "four": "Приглашать друзей и получать 10% от их дохода и инвестиций"
+      }
+    },
+    "change_awards": {
+      "title": {
+        "value": "Меняй вознаграждение на крипту",
+        "highlight": "Меняй"
+      },
+      "sub_title": {
+        "one": { "value": "Любое действие = ", "highlight": "действие" },
+        "two": {
+          "value": "вознаграждение {{value}}",
+          "highlight": "вознаграждение"
+        }
+      },
+      "descriptions": "{{value}} - это очки опыта, которые показывают твою активность на платформе Чем больше {{value}}, тем выше твои шансы получить AirDrop",
+      "sub_title_second": {
+        "value": "Что такое AirDrop ?",
+        "highlight": "AirDrop"
+      },
+      "descriptions_second": "AirDrop - это бесплатная раздача {{value}} токенов проекта самым активным участникам",
+      "cards": {
+        "one": "Выполняешь\n задания",
+        "two": "Набираешь\n {{value}}",
+        "three": "Получаешь\n токены {{value}}",
+        "four": "Торгуй {{value}}\n на бирже"
+      }
+    },
+    "more_chance": {
+      "title": {
+        "value": "Увеличь шанс на AIRDROP и получи больше XP",
+        "highlight": "Увеличь шанс"
+      },
+      "cards": {
+        "one": {
+          "title": "Шаг 1",
+          "description": "Авторизируйся в приложении и получи 10 000 {{value}}",
+          "highlight": "10 000 {{value}}"
+        },
+        "two": {
+          "title": "Шаг 2",
+          "description": "Выполняй задания и получай {{value}} бонусов за каждое",
+          "highlight": "{{value}} бонусов"
+        },
+        "three": {
+          "title": "Шаг 3",
+          "description": "Выложи ролик в соцсети в 2 клика и набирай просмотры. 1 просмотр = 1 {{value}}. Количество видео не ограничено",
+          "highlight": "1 просмотр = 1 {{value}}"
+        },
+        "four": {
+          "title": "Шаг 4",
+          "description": "Стань ранним инвестором платформы Hype Factory. Купи токен {{value}} с большим потенциалом роста",
+          "highlight": "{{value}}"
+        },
+        "five": {
+          "title": "Шаг 5",
+          "description": "Финальный шаг — приглашай друзей",
+          "highlight": ""
+        }
+      }
+    },
+    "important": {
+      "title": { "value": "Важно никаких накруток", "highlight": "Важно" },
+      "cards": {
+        "one": {
+          "value": "Отслеживает фейковые просмотры и приглашения",
+          "highlight": "Отслеживает"
+        },
+        "two": {
+          "value": "Попался на накрутке — не получишь Airdrop",
+          "highlight": "не получишь Airdrop"
+        }
+      }
+    },
+    "you_wave": {
+      "title": {
+        "value": "Выбери свой путь в Hype Factory",
+        "highlight": "свой путь"
+      },
+      "cards": {
+        "one": "Играй по честному и выигрывай токены {{value}} рекламной платформы будущего",
+        "two": "Чтобы подробнее вникнуть во все детали проекта как инвестор, жми кнопку ниже"
+      }
+    },
+
+    "button_airdrop": "участвовать в Airdrop",
+    "button_investor": "Стать инвестором"
+  },
+  "private_policy": {
+    "title": "Пользовательское соглашение и оферта децентрализованной платформы HypeFactory",
+    "descriptions": "Внимание: Настоящее соглашение содержит положения об отказе от ответственности, ограничении ответственности, обязательном разрешении споров в определённой юрисдикции, освобождении от претензий, а также иные условия, влияющие на права Пользователя. Пожалуйста, внимательно прочтите данный документ перед использованием платформы."
+  },
+  "reject_page": {
+    "title": "Оплата не прошла",
+    "descriptions": "Так бывает возможно что-то пошло не так вам стоит попробовать ещё раз "
+  },
+  "settings_page": {
+    "title": "настройки",
+    "language": "Язык платформы",
+    "account": {
+      "title": "Аккаунты"
+    },
+    "profile": {
+      "label": "Имя",
+      "placeholder": "Введите имя"
+    }
+  },
+  "success_page": {
+    "title": "Оплата прошла успешно",
+    "descriptions": "Напишите менежеру “Встреча” чтобы попасть в чат инвесторов"
+  },
+  "task_page": {
+    "title": "Задания",
+    "remains": {
+      "value": "Осталось выполнить",
+      "tasks_value": { "one": "задание", "two": "задания", "three": "заданий" }
+    },
+    "video_instructions": "Видео-инструкция",
+    "nav_menu": {
+      "all": "Все",
+      "done": "Выполненные",
+      "active": "Активные"
+    },
+    "tasks": {
+      "bybit": {
+        "title": "Спецзадание",
+        "description": "Зарегистрируйся на Bybit или отметь HF своим рефералом",
+        "steps": {
+          "one": "Зарегестрируйся на Bybit или\n отметь HF своим рефералом",
+          "is_account": "Ты можешь стать нашим рефералом\n и потом ввести в форме свой UID",
+          "not_is_account": "Зарегестрируйся на Bybit и введи в\n форме свой UID"
+        }
+      },
+      "connect_wallet": {
+        "title": "Connect wallet",
+        "description": "Secure your account by connecting your wallet to start earning rewards."
+      },
+      "daily_check_in": {
+        "title": "Daily check-in",
+        "description": "Log in every day to claim your reward and keep your streak alive."
+      },
+      "follow_x": {
+        "title": "Follow X",
+        "description": "Stay updated with the latest news by following Hype Factory on X."
+      },
+      "join_telegram": {
+        "title": "Join Telegram",
+        "description": "Become part of the Hype Factory community by joining our Telegram channel."
+      },
+      "subscribe_youtube": {
+        "title": "Subscribe to YouTube",
+        "description": "Subscribe to our YouTube channel and become part of our growing audience."
+      },
+      "subscribe_tiktok": {
+        "title": "Subscribe to TikTok",
+        "description": "Subscribe to our TikTok channel and become part of our growing audience."
+      },
+      "visit_website": {
+        "title": "Visit website",
+        "description": "Get rewarded just for visiting our website!"
+      },
+      "read_whitepaper": {
+        "title": "Read WhitePaper",
+        "description": "Follow the link to get reward"
+      },
+      "task_inst_eng": {
+        "title": "Follow Instagram (ENG)",
+        "description": "Cool visuals, behind-the-scenes stories and contests - be part of Hype Factory's international community!"
+      },
+      "task_open_tg": {
+        "title": "Subscribe to Telegram Channel (RU)",
+        "description": "The most important Hype Factory news is here - stay updated with official announcements!"
+      },
+      "task_open_tg_chat": {
+        "title": "Join Telegram Chat (RU)",
+        "description": "This is where the project comes alive: airdrops, voting and real-time communication. You won't want to miss this!"
+      },
+      "task_sam_ru": {
+        "title": "Subscribe to Founder (RU)",
+        "description": "The most important project news - only here! Subscribe and be the first to know about all updates."
+      },
+      "task_inst_ru": {
+        "title": "Follow Instagram (RU)",
+        "description": "Vibrant content, memes and important announcements - subscribe so you don't miss a single event!"
+      },
+      "task_open_tg_eng": {
+        "title": "Subscribe to Telegram Channel (ENG)",
+        "description": "All crucial Hype Factory updates in one place - never miss important information!"
+      },
+      "task_open_tg_chat_eng": {
+        "title": "Join Telegram Chat (ENG)",
+        "description": "Your chance to be at the center of action! We discuss crypto, share insights and grow together."
+      }
+    }
+  },
+  "wallet_page": {
+    "title": "Кошелёк",
+    "token": {
+      "balance": "Баланс {{value}}",
+      "token_balance": "Токены {{value}}"
+    },
+    "balance": {
+      "title": "Когда будет токен {{value}}?",
+      "descriptions": "Сразу после листинга на бирже, следи за новостями в",
+      "descriptions_link": "телеграм-канале"
+    },
+    "more_xp": {
+      "title": "Что такое {{value}} ?",
+      "descriptions": "Узнай больше о внутренней валюте Hype Factory",
+      "xp": "{{value}} — это очки опыта, которые показывают твою активность на платформе. Чем больше {{value}}, тем выше твои шансы получить AirDrop",
+      "button": {
+        "hide": "скрыть",
+        "view": "подробнее"
+      }
+    },
+    "modal": {
+      "title": "Эта функция\n ещё не доступна",
+      "descriptions": "Подключить кошелёк вы\n сможете на этапе обмена и\n раздачи {{value}} токенов"
+    }
+  },
+  "nav_panel": {
+    "home": "Главная",
+    "task": "Задания",
+    "income": "Доход",
+    "friends": "Друзья",
+    "wallet": "Кошелёк"
+  },
+
+  "modal_auth": {
+    "title": "Забери \n 10 000 {{value}}",
+    "descriptions": "за первую авторизацию",
+    "private_policy": {
+      "value": "При авторизации вы выражаете согласие с",
+      "link": "Правилами конфиденциальности",
+      "value_second": "этого сервиса"
+    }
+  },
+  "modal_buy_token": {
+    "title": "Подтвердите\n покупку \n 2500 {{value}}",
+    "descriptions": "переходя по ссылке вы соглашаетесь с офертой сервиса"
+  },
+  "modal_checked": {
+    "descriptions": "Вы получили бонус {{value}}. \n Приходите завтра"
+  },
+  "modal_success": {
+    "title": "+{{valueAwards}} {{value}} Поздравляем!",
+    "descriptions": "Теперь ты готов создавать свою ферму видео"
+  },
+
+  "button_account_out": "выйти из аккаунта",
+  "button_back": "вернуться",
+  "button_buy": "купить",
+  "button_cancel": "Отмена",
+  "button_close": "закрыть",
+  "button_connect_wallet": "Подключить кошелёк",
+  "button_create_video": "Создать видео",
+  "button_done": "Готово",
+  "button_end": "Завершить",
+  "button_home": "На главную",
+  "button_get": "получить",
+  "button_is_account": "Уже есть аккаунт",
+  "button_manager": "написать менеджеру",
+  "button_more": "Далее",
+  "button_pay": "Оплатить",
+  "button_register": "Проити регистрацию",
+  "button_repeat": "Повторить",
+  "button_save": "сохранить",
+  "button_start": "начать",
+  "button_support": "Написать в поддержку",
+  "button_understand": "Понятно",
+
+  "buy_token": "Buy token",
+  "claim": "Claim",
+  "empty": "Empty",
+  "you": "You",
+
+  "inputs": {
+    "placeholder": "Paste URL"
+  },
+  "notifications": {
+    "copied": "Copied",
+    "try_uploading_another_video": "Try uploading another video, if it doesn't work contact support - {{value}}",
+    "to_long": "The video is too long"
+  }
+}

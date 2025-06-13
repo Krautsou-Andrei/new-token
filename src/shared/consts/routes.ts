@@ -1,0 +1,16 @@
+export const ROUTES = {
+  APP: '/app' as const,
+  PRIVACY_POLICY: '/privacy-policy' as const,
+  SETTINGS: '/settings' as const,
+  AIRDROP: '/airdrop' as const,
+  PRESALE: '/presale' as const,
+  INVESTOR: '/investor' as const,
+  FRIENDS: '/friends' as const,
+  WALLET: '/wallet' as const,
+  REJECTED: '/rejected' as const,
+  SUCCESS: '/success' as const,
+  TASKS: '/tasks' as const,
+  INCOME: '/income' as const,
+  MAIN: '/' as const,
+  NOT_FOUND: '*' as const,
+};

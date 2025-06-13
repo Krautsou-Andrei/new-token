@@ -1,0 +1,103 @@
+import type { Task } from '@/entities/awards';
+
+import { DEFAULT } from '@/shared/consts';
+import { AWARDS_TASKS } from '@/shared/consts/awards-tasks';
+import { LOCAL_TEXT } from '@/shared/consts/local-text';
+
+export const AWARDS: Task[] = [
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.BYBIT.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.BYBIT.DESCRIPTIONS,
+    category: AWARDS_TASKS.BYBIT,
+  },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.CONNECT_WALLET.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.CONNECT_WALLET.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.WALLET,
+  // },
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.DAILY_CHECK_IN.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.DAILY_CHECK_IN.DESCRIPTIONS,
+    category: AWARDS_TASKS.CHECKIN,
+  },
+
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.FOLLOW_X.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.FOLLOW_X.DESCRIPTIONS,
+    category: AWARDS_TASKS.OPEN_X,
+    webUrl: DEFAULT.X,
+  },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.JOIN_TELEGRAM.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.JOIN_TELEGRAM.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.OPEN_TG,
+  //   webUrl: DEFAULT.TG_CHANEL,
+  // },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.SUBSCRIBE_YOUTUBE.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.SUBSCRIBE_YOUTUBE.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.OPEN_YOUTUBE,
+  //   webUrl: DEFAULT.YOU_TUBE,
+  // },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.SUBSCRIBE_TIK_TOK.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.SUBSCRIBE_TIK_TOK.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.OPEN_TIKTOK,
+  //   webUrl: DEFAULT.TIK_TOK,
+  // },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.VISIT_WEBSITE.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.VISIT_WEBSITE.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.WEB_URL,
+  //   webUrl: DEFAULT.SAIT,
+  // },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.READ_WHITEPAPER.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.READ_WHITEPAPER.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.OPEN_WHITEPAPER,
+  //   webUrl: DEFAULT.WHITEPAPER,
+  //   webUrlRu: DEFAULT.WHITEPAPER_RU,
+  // },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_INST_ENG.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_INST_ENG.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.INST_ENG,
+  //   webUrl: DEFAULT.INST_ENG,
+  // },
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG.DESCRIPTIONS,
+    category: AWARDS_TASKS.OPEN_TG,
+    webUrl: DEFAULT.OPEN_TG,
+  },
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG_CHAT.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG_CHAT.DESCRIPTIONS,
+    category: AWARDS_TASKS.OPEN_TG_CHAT,
+    webUrl: DEFAULT.CHAT,
+  },
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_SAM_RU.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_SAM_RU.DESCRIPTIONS,
+    category: AWARDS_TASKS.SAM_RU,
+    webUrl: DEFAULT.SAM,
+  },
+  {
+    title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_INST_RU.TITLE,
+    description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_INST_RU.DESCRIPTIONS,
+    category: AWARDS_TASKS.INST_RU,
+    webUrl: DEFAULT.INST_RU,
+  },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG_ENG.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG_ENG.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.OPEN_TG_ENG,
+  //   webUrl: DEFAULT.TG_CHANEL_ENG,
+  // },
+  // {
+  //   title: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG_CHAT_ENG.TITLE,
+  //   description: LOCAL_TEXT.TASK_PAGE.TASKS.TASK_OPEN_TG_CHAT_ENG.DESCRIPTIONS,
+  //   category: AWARDS_TASKS.OPEN_TG_CHAT_ENG,
+  //   webUrl: DEFAULT.CHAT_ENG,
+  // },
+];
