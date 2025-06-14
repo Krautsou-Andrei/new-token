@@ -1,10 +1,27 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Box, Button, Flex, Progress, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  Slider,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderTrack,
+  Text,
+} from '@chakra-ui/react';
+import { Address } from '@ton/core';
+import { useTonWallet } from '@tonconnect/ui-react';
 
+import { useGetJettonBalances } from '@/shared/api/hooks/jetton/use-get-jetton-balances';
+import { env } from '@/shared/consts';
+import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-address';
+import useDebounce from '@/shared/lib/utils/hooks/use-debounce';
+import { amountValidateNumber } from '@/shared/lib/utils/validate/amount-validate-number';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppSeparator } from '@/shared/ui/app-separator';
 import { AppTextGradient } from '@/shared/ui/app-text-gradient';
@@ -12,8 +29,36 @@ import { AppTextGradient } from '@/shared/ui/app-text-gradient';
 import { SLIDES } from '../form-app/const';
 
 export const Steiking = () => {
+  const wallet = useTonWallet();
+  // const WebApp = useWebApp();
+  // const telegramId = WebApp?.initDataUnsafe?.user?.id;
+
+  const JettonMasterAddress = Address.parse(
+    env.jettonMasterAddress
+  ).toRawString();
+
+  const { data: jettonBalance } = useGetJettonBalances(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+    wallet?.account.address!,
+    Boolean(wallet?.account.address)
+  );
+
+  const jettonMasterBalance = getBalanceJettonAddress(
+    jettonBalance,
+    JettonMasterAddress
+  );
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeToken, setActiveToken] = useState(SLIDES[0].title);
+
+  const [valueStaking, setValueStaking] = useState('');
+  const debouncedValue = useDebounce(valueStaking, 300);
+
+  useEffect(() => {
+    if (jettonMasterBalance) {
+      setValueStaking(jettonMasterBalance);
+    }
+  }, [jettonMasterBalance]);
 
   return (
     <Box>
@@ -70,12 +115,38 @@ export const Steiking = () => {
           </Swiper>
         </Box>
         <Box>
-          <AppTextGradient
-            fontFamily={'tektur'}
+          <Input
             fontSize={{ base: '28px', sm: '48px' }}
-          >
-            10000
-          </AppTextGradient>
+            background="linear-gradient(90deg, #00FF99, #7B00FF)"
+            backgroundClip="text"
+            sx={{
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block',
+              color: 'transparent',
+              _focus: {
+                background: 'linear-gradient(90deg, #00FF99, #7B00FF)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                outline: 'none',
+                border: '2px solid #00FF99',
+              },
+              _hover: {
+                background: 'linear-gradient(90deg, #00FF99, #7B00FF)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                outline: 'none',
+              },
+            }}
+            fontFamily={'tektur'}
+            value={valueStaking}
+            min={1000}
+            max={jettonMasterBalance}
+            onKeyDown={(event) =>
+              amountValidateNumber(event as unknown as KeyboardEvent)
+            }
+            onChange={(event) => setValueStaking(event.target.value)}
+          />
         </Box>
       </Flex>
       <Flex
@@ -89,7 +160,23 @@ export const Steiking = () => {
         <Box>MIN</Box>
         <Box>MAX</Box>
       </Flex>
-      <Progress
+      <Box>
+        <Slider
+          aria-label="slider-ex-2"
+          colorScheme="pink"
+          value={Number(debouncedValue)}
+          min={1000}
+          max={Number(jettonMasterBalance)}
+          step={10}
+          onChange={(val) => setValueStaking(String(val))}
+        >
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb />
+        </Slider>{' '}
+      </Box>
+      {/* <Progress
         mb={{ base: 2, sm: 4 }}
         h={2}
         rounded={'48px'}
@@ -101,7 +188,7 @@ export const Steiking = () => {
           },
         }}
         value={20}
-      />
+      /> */}
       <Flex justifyContent={'space-between'} gap={4} mb={{ base: 10, sm: 15 }}>
         <AppTextGradient
           lineHeight={'100%'}

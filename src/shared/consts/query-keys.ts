@@ -12,7 +12,7 @@ export const QUERY_KEYS = {
   ALL_USERS: 'all_users',
   TRANSACTION_SUM: 'transaction_sum',
   PRESALE_TOKEN_SUM: 'presale_token_sum',
-
+  LOGIN: 'login',
   JETTON_WALLET_ADDRESS: 'jettonWalletAddress',
 
   STAKING_BY_ID: 'stakingById',

@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { Address } from '@ton/core';
 import { toUserFriendlyAddress, useTonWallet } from '@tonconnect/ui-react';
-import { useWebApp } from '@vkruglikov/react-telegram-web-app';
+
+// import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 
 import { AppNotifyModal } from '@/widgets/app-notify-modal';
 import { AppTransactionModal } from '@/widgets/app-transaction-modal';
 import { BackButtonApp } from '@/widgets/back-button-app';
 
-import { useGetAccount } from '@/shared/api/hooks/jetton/use-get-account';
 import { useGetJettonBalances } from '@/shared/api/hooks/jetton/use-get-jetton-balances';
 import { env } from '@/shared/consts';
 import { useModalStore } from '@/shared/lib/persistance/modal.store';
@@ -24,7 +24,7 @@ import { Steiking } from './steiking';
 
 export const AirdropPage = () => {
   const wallet = useTonWallet();
-  const WebApp = useWebApp();
+  // const WebApp = useWebApp();
   // const telegramId = WebApp?.initDataUnsafe?.user?.id;
 
   const { isSuccessModal, closeSuccessModal } = useModalStore();
