@@ -1,11 +1,15 @@
-import { relative } from 'path';
+import { useState } from 'react';
 
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { useTonWallet } from '@tonconnect/ui-react';
+import { toUserFriendlyAddress, useTonWallet } from '@tonconnect/ui-react';
 
+import { AppNotifyModal } from '@/widgets/app-notify-modal';
 import { AppTransactionModal } from '@/widgets/app-transaction-modal';
+import { BackButtonApp } from '@/widgets/back-button-app';
 
 import { useModalStore } from '@/shared/lib/persistance/modal.store';
+import { sliseAddress } from '@/shared/lib/utils/slise-address';
+import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppLayoutBound } from '@/shared/ui/app-layout-bound';
 import { AppTonButton } from '@/shared/ui/app-ton-button';
 
@@ -15,6 +19,11 @@ import { Steiking } from './steiking';
 export const AirdropPage = () => {
   const wallet = useTonWallet();
   const { isSuccessModal, closeSuccessModal } = useModalStore();
+  const [isOpenModalNotify, setIsOpenModalNotify] = useState(false);
+
+  const triggerModalNotify = () => {
+    setIsOpenModalNotify((prev) => !prev);
+  };
 
   return (
     <AppLayoutBound
@@ -26,6 +35,18 @@ export const AirdropPage = () => {
         <Box flex={1} pt={'110px'}>
           {wallet ? (
             <>
+              <Flex alignItems={'center'} justifyContent={'space-between'}>
+                <BackButtonApp />
+                <AppButtonBorderGradient
+                  fontSize={{ base: '24px', sm: '32px ' }}
+                  py={{ base: '2px', sm: '20px' }}
+                  px={{ base: '16px', sm: '12px' }}
+                  h={'32px'}
+                  onClick={triggerModalNotify}
+                >
+                  {sliseAddress(toUserFriendlyAddress(wallet.account.address))}
+                </AppButtonBorderGradient>
+              </Flex>
               <Flex
                 direction={'column'}
                 pt={{ base: 3, sm: 6 }}
@@ -79,6 +100,7 @@ export const AirdropPage = () => {
         isOpen={isSuccessModal}
         onClose={closeSuccessModal}
       />
+      <AppNotifyModal isOpen={isOpenModalNotify} onClose={triggerModalNotify} />
     </AppLayoutBound>
   );
 };

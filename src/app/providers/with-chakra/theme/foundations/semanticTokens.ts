@@ -34,6 +34,7 @@ export default {
       third: COLOR.COD_GRAY,
       fourth: COLOR.BG_LIGHT_GRAY,
       orange: COLOR.ORANGE,
+      warning: COLOR.RED,
     },
     border: {
       primary: COLOR.LIME,
@@ -47,6 +48,7 @@ export default {
       primary: {
         background: COLOR.LIME,
         foreground: COLOR.COD_GRAY,
+        text: COLOR.BLACK,
       },
       secondary: {
         background: { default: 'transparent', _dark: '#10161f' },

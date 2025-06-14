@@ -38,7 +38,7 @@ export const AppButtonBorderGradient = ({
         cursor="pointer"
         {...props}
       >
-        <AppTextGradient>{children}</AppTextGradient>
+        <AppTextGradient px={'8px'}>{children}</AppTextGradient>
       </Button>
     </div>
   );

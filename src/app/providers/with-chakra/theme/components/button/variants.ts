@@ -36,7 +36,7 @@ function variant(
 }
 
 const primary = {
-  ...variant('button.primary.background', 'button.primary.foreground'),
+  ...variant('button.primary.background', 'button.primary.text'),
   textTransform: 'uppercase',
 };
 
