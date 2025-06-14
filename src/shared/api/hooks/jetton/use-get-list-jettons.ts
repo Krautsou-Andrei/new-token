@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-catch */
 import { useQuery } from '@tanstack/react-query';
 
 import { DEFAULT, QUERY_KEYS } from '@/shared/consts';
@@ -22,8 +21,9 @@ export const useGetListJettons = (addressWallet: string, isFetch: boolean) => {
         result.balances = filterResult;
 
         return result;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
-        throw error;
+        /* empty */
       }
     },
     enabled: isFetch,

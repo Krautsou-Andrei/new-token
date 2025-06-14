@@ -4,10 +4,11 @@ import { Buffer } from 'buffer';
 import { Api, HttpClient } from '@ton-api/client';
 import { Address, Cell } from '@ton/core';
 
-import { env } from '../consts';
+// import { env } from '../consts';
 
 const httpClient = new HttpClient({
-  baseUrl: `${env.tonapiUrl}`,
+  // baseUrl: `${env.tonapiUrl}`,
+  baseUrl: 'https://testnet.tonapi.io',
   baseApiParams: {
     headers: {
       'Content-type': 'application/json',
@@ -83,11 +84,11 @@ export async function getJettonMeta(address: string) {
 
 export async function getJettonBalances(
   address: string,
-  addressJetton?: string
+  currencies?: string[]
 ) {
   try {
     const result = await tonapi.accounts.getAccountJettonsBalances(address, {
-      currencies: addressJetton,
+      currencies: currencies?.join() || ['ton', 'usd', 'rub'].join(),
     });
 
     return result;
@@ -150,9 +151,9 @@ export const getAccountDns = async (address: string) => {
   }
 };
 
-export const testAddress = async (addressCheck: string) => {
+export const getAccount = async (addressRaw: string) => {
   try {
-    const result = await tonapi.accounts.getAccount(addressCheck);
+    const result = await tonapi.accounts.getAccount(addressRaw);
 
     return result;
   } catch (error) {

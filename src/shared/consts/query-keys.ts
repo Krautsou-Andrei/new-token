@@ -1,4 +1,5 @@
 export const QUERY_KEYS = {
+  ACCOUNT: 'account',
   ALL_VIDEO: 'allVideo',
   AWARDS: 'awards',
   BALANCES: 'balances',
@@ -11,6 +12,8 @@ export const QUERY_KEYS = {
   ALL_USERS: 'all_users',
   TRANSACTION_SUM: 'transaction_sum',
   PRESALE_TOKEN_SUM: 'presale_token_sum',
+
+  JETTON_WALLET_ADDRESS: 'jettonWalletAddress',
 
   STAKING_BY_ID: 'stakingById',
   STAKING_REFERRAL: 'stakingreferral',

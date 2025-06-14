@@ -5,4 +5,6 @@ export const env = {
   tonapiUrl: import.meta.env.VITE_TONAPI_URL,
   tokenMixpanel: import.meta.env.VITE_TOKEN_MIXPANEL,
   walletConnetProjctId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID,
+  stakeMasterAddress: import.meta.env.VITE_APP_STAKE_MASTER,
+  jettonMasterAddress: import.meta.env.VITE_APP_JETTON_MASTER,
 };

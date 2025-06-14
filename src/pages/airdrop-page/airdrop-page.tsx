@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Box, Flex, Text } from '@chakra-ui/react';
+import { Address } from '@ton/core';
 import { toUserFriendlyAddress, useTonWallet } from '@tonconnect/ui-react';
 import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 
@@ -8,8 +9,11 @@ import { AppNotifyModal } from '@/widgets/app-notify-modal';
 import { AppTransactionModal } from '@/widgets/app-transaction-modal';
 import { BackButtonApp } from '@/widgets/back-button-app';
 
-import { useGetStakingUser } from '@/shared/api/hooks/staking/use-get-staking-user';
+import { useGetAccount } from '@/shared/api/hooks/jetton/use-get-account';
+import { useGetJettonBalances } from '@/shared/api/hooks/jetton/use-get-jetton-balances';
+import { env } from '@/shared/consts';
 import { useModalStore } from '@/shared/lib/persistance/modal.store';
+import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-address';
 import { sliseAddress } from '@/shared/lib/utils/slise-address';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppLayoutBound } from '@/shared/ui/app-layout-bound';
@@ -21,14 +25,31 @@ import { Steiking } from './steiking';
 export const AirdropPage = () => {
   const wallet = useTonWallet();
   const WebApp = useWebApp();
-  const telegramId = WebApp?.initDataUnsafe?.user?.id;
+  // const telegramId = WebApp?.initDataUnsafe?.user?.id;
 
   const { isSuccessModal, closeSuccessModal } = useModalStore();
   const [isOpenModalNotify, setIsOpenModalNotify] = useState(false);
 
-  const { data } = useGetStakingUser(telegramId || '1718587413');
+  const JettonMasterAddress = Address.parse(
+    env.jettonMasterAddress
+  ).toRawString();
 
-  console.log('data', data);
+  const { data: jettonBalance } = useGetJettonBalances(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+    wallet?.account.address!,
+    Boolean(wallet?.account.address)
+  );
+
+  const jettonMasterBalance = getBalanceJettonAddress(
+    jettonBalance,
+    JettonMasterAddress
+  );
+
+  const selectedJetton = jettonBalance?.find(
+    (item) => item?.jetton.address === JettonMasterAddress
+  );
+
+  // const { data } = useGetStakingUser(telegramId || '1718587413');
 
   const triggerModalNotify = () => {
     setIsOpenModalNotify((prev) => !prev);
@@ -68,7 +89,7 @@ export const AirdropPage = () => {
                   fontWeight={400}
                   fontFamily={'tektur'}
                 >
-                  5000.00
+                  {jettonMasterBalance}
                 </Text>
                 <Text
                   fontSize={{ base: '20px', sm: '24px' }}
@@ -77,7 +98,7 @@ export const AirdropPage = () => {
                   fontFamily={'tektur'}
                   color={'text.secondary'}
                 >
-                  anon tokens
+                  {selectedJetton?.jetton.symbol || 'anon tokens'}
                 </Text>
               </Flex>
               <FormApp mb={5} />
