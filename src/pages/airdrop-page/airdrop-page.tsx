@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { toUserFriendlyAddress, useTonWallet } from '@tonconnect/ui-react';
+import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 
 import { AppNotifyModal } from '@/widgets/app-notify-modal';
 import { AppTransactionModal } from '@/widgets/app-transaction-modal';
 import { BackButtonApp } from '@/widgets/back-button-app';
 
+import { useGetStakingUser } from '@/shared/api/hooks/staking/use-get-staking-user';
 import { useModalStore } from '@/shared/lib/persistance/modal.store';
 import { sliseAddress } from '@/shared/lib/utils/slise-address';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
@@ -18,8 +20,15 @@ import { Steiking } from './steiking';
 
 export const AirdropPage = () => {
   const wallet = useTonWallet();
+  const WebApp = useWebApp();
+  const telegramId = WebApp?.initDataUnsafe?.user?.id;
+
   const { isSuccessModal, closeSuccessModal } = useModalStore();
   const [isOpenModalNotify, setIsOpenModalNotify] = useState(false);
+
+  const { data } = useGetStakingUser(telegramId || '1718587413');
+
+  console.log('data', data);
 
   const triggerModalNotify = () => {
     setIsOpenModalNotify((prev) => !prev);
