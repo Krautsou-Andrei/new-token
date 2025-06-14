@@ -9,7 +9,6 @@ export const AppTextGradient = ({
   return (
     <Text
       {...props}
-      {...props}
       background="linear-gradient(90deg, #00FF99, #7B00FF)"
       backgroundClip="text"
       sx={{

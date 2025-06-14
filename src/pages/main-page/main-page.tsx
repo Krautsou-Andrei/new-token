@@ -65,10 +65,10 @@ export const MainPage = () => {
             p={3}
             variant={'iconDefault'}
             size={'fit'}
-            fontSize={{ base: '72px', sm: '96px' }}
+            fontSize={{ base: '64px', sm: '86px' }}
             lineHeight={'100%'}
             fontWeight={400}
-            fontFamily={'beatstreetregular'}
+            fontFamily={'Rhythmic'}
             background="linear-gradient(90deg,  #00FF99,#7B00FF)"
             backgroundClip="text"
             textFillColor="transparent"
@@ -97,9 +97,9 @@ export const MainPage = () => {
           <Box w={'full'}>
             <Box
               textAlign={'center'}
-              fontSize={'32px'}
+              fontSize={{ base: '24px', sm: '28px' }}
               fontWeight={400}
-              fontFamily={'beatstreetregular'}
+              fontFamily={'Rhythmic'}
               background="linear-gradient(90deg,  #00FF99,#7B00FF)"
               backgroundClip="text"
               textFillColor="transparent"
@@ -148,10 +148,10 @@ export const MainPage = () => {
             p={3}
             variant={'iconDefault'}
             size={'fit'}
-            fontSize={{ base: '48px', sm: '64px' }}
+            fontSize={{ base: '36px', sm: '52px' }}
             lineHeight={'100%'}
             fontWeight={400}
-            fontFamily={'beatstreetregular'}
+            fontFamily={'Rhythmic'}
             background="linear-gradient(90deg,  #00FF99,#7B00FF)"
             backgroundClip="text"
             textFillColor="transparent"
