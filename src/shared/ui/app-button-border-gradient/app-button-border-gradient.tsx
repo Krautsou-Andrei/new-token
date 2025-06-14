@@ -1,13 +1,20 @@
+import type { HTMLAttributes } from 'react';
+
 import { Button, type ButtonProps } from '@chakra-ui/react';
 
 import { AppTextGradient } from '../app-text-gradient';
 
-type AppButtonBorderGradientProps = ButtonProps;
+type AppButtonBorderGradientProps = ButtonProps & {
+  wrapperProps?: HTMLAttributes<HTMLDivElement>;
+};
 
 export const AppButtonBorderGradient = ({
   children,
+  wrapperProps = {},
   ...props
 }: AppButtonBorderGradientProps) => {
+  const { style: styleProps, ...restWrapperProps } = wrapperProps;
+
   return (
     <div
       style={{
@@ -19,7 +26,9 @@ export const AppButtonBorderGradient = ({
         background:
           'linear-gradient(90deg, #00FF99 0%, #1D2120 24.52%, #1D2120 75%, #00FF99 100%)',
         overflow: 'hidden',
+        ...styleProps,
       }}
+      {...restWrapperProps}
     >
       <Button
         px={'62px'}

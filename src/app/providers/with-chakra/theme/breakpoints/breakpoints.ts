@@ -1,5 +1,5 @@
 export default {
-  sm: '415px',
+  sm: '515px',
   md: '420px',
   lg: '800px',
   xl: '1001px',

@@ -4,6 +4,7 @@ import { Box, Button, Flex, Radio, RadioGroup } from '@chakra-ui/react';
 import { useNavigate } from '@tanstack/react-router';
 
 import { ROUTES } from '@/shared/consts';
+import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppIcon } from '@/shared/ui/app-icon';
 import { AppLayoutBound } from '@/shared/ui/app-layout-bound';
 
@@ -59,29 +60,19 @@ export const MainPage = () => {
             </Button>
           </Flex>
         </Box>
+        <AppButtonBorderGradient
+          wrapperProps={{
+            style: {
+              marginBottom: '20px',
+            },
+          }}
+          onClick={() => {
+            navigate({ to: ROUTES.AIRDROP });
+          }}
+        >
+          Стейкинг
+        </AppButtonBorderGradient>{' '}
         <Flex w={'full'} direction={'column'} alignItems={'center'}>
-          <Button
-            rounded={0}
-            p={3}
-            variant={'iconDefault'}
-            size={'fit'}
-            fontSize={{ base: '64px', sm: '86px' }}
-            lineHeight={'100%'}
-            fontWeight={400}
-            fontFamily={'Rhythmic'}
-            background="linear-gradient(90deg,  #00FF99,#7B00FF)"
-            backgroundClip="text"
-            textFillColor="transparent"
-            sx={{
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-            onClick={() => {
-              navigate({ to: ROUTES.AIRDROP });
-            }}
-          >
-            Stake now
-          </Button>
           <Flex
             w={'full'}
             gap={2}
@@ -108,7 +99,7 @@ export const MainPage = () => {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              friends 1/10
+              друзья 1/10
             </Box>
             <RadioGroup onChange={setValue} value={value} mb={'64px'}>
               <Flex gap={2.5} className={styles.container}>
@@ -160,7 +151,7 @@ export const MainPage = () => {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Get a VPN always
+            Получи VPN навсегда
           </Button>
         </Flex>
       </Flex>
