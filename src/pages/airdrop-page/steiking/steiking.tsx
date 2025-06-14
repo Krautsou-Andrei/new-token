@@ -154,6 +154,7 @@ export const Steiking = () => {
               amountValidateNumber(event as unknown as KeyboardEvent)
             }
             onChange={(event) => {
+              event.preventDefault();
               const newValue = Number(event.target.value);
               if (newValue <= Number(jettonMasterBalance)) {
                 setValueStaking(String(newValue));
@@ -173,7 +174,7 @@ export const Steiking = () => {
         <Box>MIN</Box>
         <Box>MAX</Box>
       </Flex>
-      <Box>
+      <Box mb={2}>
         <Slider
           aria-label="slider-ex-2"
           colorScheme="pink"
@@ -181,6 +182,7 @@ export const Steiking = () => {
           min={DEFAULT.MIN_STAKE_TOKEN}
           max={Number(jettonMasterBalance)}
           step={100}
+          focusThumbOnChange={false}
           sx={{
             '& [class*="chakra-slider__filled"]': {
               backgroundColor: '#00FF99',
