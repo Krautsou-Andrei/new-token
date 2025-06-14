@@ -18,7 +18,7 @@ import { Address } from '@ton/core';
 import { useTonWallet } from '@tonconnect/ui-react';
 
 import { useGetJettonBalances } from '@/shared/api/hooks/jetton/use-get-jetton-balances';
-import { env } from '@/shared/consts';
+import { DEFAULT, env } from '@/shared/consts';
 import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-address';
 import useDebounce from '@/shared/lib/utils/hooks/use-debounce';
 import { amountValidateNumber } from '@/shared/lib/utils/validate/amount-validate-number';
@@ -52,13 +52,19 @@ export const Steiking = () => {
   const [activeToken, setActiveToken] = useState(SLIDES[0].title);
 
   const [valueStaking, setValueStaking] = useState('');
+  const [valueStakingSlider, setValueStakingSlider] = useState('');
   const debouncedValue = useDebounce(valueStaking, 300);
 
   useEffect(() => {
     if (jettonMasterBalance) {
       setValueStaking(jettonMasterBalance);
+      setValueStakingSlider(jettonMasterBalance);
     }
   }, [jettonMasterBalance]);
+
+  useEffect(() => {
+    setValueStakingSlider(debouncedValue);
+  }, [debouncedValue]);
 
   return (
     <Box>
@@ -124,6 +130,8 @@ export const Steiking = () => {
               WebkitTextFillColor: 'transparent',
               display: 'inline-block',
               color: 'transparent',
+              textAlign: 'right',
+              direction: 'rtl',
               _focus: {
                 background: 'linear-gradient(90deg, #00FF99, #7B00FF)',
                 WebkitBackgroundClip: 'text',
@@ -140,12 +148,17 @@ export const Steiking = () => {
             }}
             fontFamily={'tektur'}
             value={valueStaking}
-            min={1000}
+            min={DEFAULT.MIN_STAKE_TOKEN}
             max={jettonMasterBalance}
             onKeyDown={(event) =>
               amountValidateNumber(event as unknown as KeyboardEvent)
             }
-            onChange={(event) => setValueStaking(event.target.value)}
+            onChange={(event) => {
+              const newValue = Number(event.target.value);
+              if (newValue <= Number(jettonMasterBalance)) {
+                setValueStaking(String(newValue));
+              }
+            }}
           />
         </Box>
       </Flex>
@@ -164,11 +177,20 @@ export const Steiking = () => {
         <Slider
           aria-label="slider-ex-2"
           colorScheme="pink"
-          value={Number(debouncedValue)}
-          min={1000}
+          value={Number(valueStakingSlider)}
+          min={DEFAULT.MIN_STAKE_TOKEN}
           max={Number(jettonMasterBalance)}
-          step={10}
-          onChange={(val) => setValueStaking(String(val))}
+          step={100}
+          sx={{
+            '& [class*="chakra-slider__filled"]': {
+              backgroundColor: '#00FF99',
+              borderRadius: '48px',
+            },
+          }}
+          onChange={(val) => {
+            setValueStakingSlider(String(val));
+            setValueStaking(String(val));
+          }}
         >
           <SliderTrack>
             <SliderFilledTrack />
@@ -176,19 +198,6 @@ export const Steiking = () => {
           <SliderThumb />
         </Slider>{' '}
       </Box>
-      {/* <Progress
-        mb={{ base: 2, sm: 4 }}
-        h={2}
-        rounded={'48px'}
-        bg="#2B314E"
-        sx={{
-          '& [role="progressbar"] ': {
-            backgroundColor: '#00FF99',
-            borderRadius: '48px',
-          },
-        }}
-        value={20}
-      /> */}
       <Flex justifyContent={'space-between'} gap={4} mb={{ base: 10, sm: 15 }}>
         <AppTextGradient
           lineHeight={'100%'}
@@ -205,7 +214,7 @@ export const Steiking = () => {
           gap={{ base: 2, sm: 4 }}
         >
           <Text textAlign={'end'} fontSize={{ base: '32px', sm: '64px' }}>
-            20000.00
+            {Number(valueStaking) * 2}
           </Text>
 
           <Text textAlign={'end'} color={'text.secondary'}>
