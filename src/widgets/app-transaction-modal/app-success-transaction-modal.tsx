@@ -7,6 +7,7 @@ import { useBuyStore } from '@/shared/lib/persistance';
 import { amountValidateNumber } from '@/shared/lib/utils/validate/amount-validate-number';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppModal } from '@/shared/ui/app-modal';
+import { AppSpiner } from '@/shared/ui/app-spiner';
 
 interface AppTransactionProps {
   isOpen: boolean;
@@ -19,8 +20,11 @@ export const AppTransactionModal = memo(
     const { link } = useBuyStore();
 
     const [value, setValue] = useState('');
-    const { mutate: cretePayment, isSuccess: isSuccessPayment } =
-      useCreatePayment();
+    const {
+      mutate: cretePayment,
+      isSuccess: isSuccessPayment,
+      isPending: isPendingPayment,
+    } = useCreatePayment();
 
     useEffect(() => {
       if (isSuccessPayment) {
@@ -30,6 +34,7 @@ export const AppTransactionModal = memo(
 
     return (
       <AppModal isOpen={isOpen} onClose={onClose} title={'Пополнить'}>
+        {isPendingPayment && <AppSpiner />}
         <Box
           mb={4}
           textAlign={'center'}

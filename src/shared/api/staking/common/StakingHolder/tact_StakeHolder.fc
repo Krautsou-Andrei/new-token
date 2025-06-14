@@ -1,0 +1,631 @@
+#pragma version =0.4.6;
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+;; tact_StakeHolder.headers.fc
+;;
+;; Header files for StakeHolder
+;; NOTE: declarations are sorted for optimal order
+;;
+
+;; __tact_context_get_sender
+slice __tact_context_get_sender() inline;
+
+;; $Unstake$_store
+builder $Unstake$_store(builder build_0, (int, int, slice, int, int, int) v) inline;
+
+;; $Unstake$_store_cell
+cell $Unstake$_store_cell((int, int, slice, int, int, int) v) inline;
+
+;; $UnstakeOk$_load_without_opcode
+(slice, (tuple)) $UnstakeOk$_load_without_opcode(slice sc_0) inline;
+
+;; $HolderUnstake$_load_without_opcode
+(slice, (tuple)) $HolderUnstake$_load_without_opcode(slice sc_0) inline;
+
+;; $HolderTakeReward$_load_without_opcode
+(slice, ((int, int))) $HolderTakeReward$_load_without_opcode(slice sc_0) inline;
+
+;; $TakeRewardOk$_store
+builder $TakeRewardOk$_store(builder build_0, (int, int, slice, int, int, int) v) inline;
+
+;; $TakeRewardOk$_store_cell
+cell $TakeRewardOk$_store_cell((int, int, slice, int, int, int) v) inline;
+
+;; $StakeProofRequest$_load_without_opcode
+(slice, ((int))) $StakeProofRequest$_load_without_opcode(slice sc_0) inline;
+
+;; $StakeProof$_store
+builder $StakeProof$_store(builder build_0, (int, slice, int, int, int) v) inline;
+
+;; $StakeProof$_store_cell
+cell $StakeProof$_store_cell((int, slice, int, int, int) v) inline;
+
+;; $StakeHolder$_store
+builder $StakeHolder$_store(builder build_0, (int, int, int, slice, slice, int, int, int, int) v) inline;
+
+;; $StakeHolder$_load
+(slice, ((int, int, int, slice, slice, int, int, int, int))) $StakeHolder$_load(slice sc_0) inline;
+
+;; $StakeHolder$init$_load
+(slice, ((int, slice, slice, int, int, int))) $StakeHolder$init$_load(slice sc_0) inline;
+
+;; $StakeHolder$_contract_init
+(int, int, int, slice, slice, int, int, int, int) $StakeHolder$_contract_init(int $id, slice $master, slice $staker, int $amount, int $plan_index, int $duration) impure inline;
+
+;; $StakeHolder$_contract_load
+(int, int, int, slice, slice, int, int, int, int) $StakeHolder$_contract_load() impure inline;
+
+;; $StakeHolder$_contract_store
+() $StakeHolder$_contract_store((int, int, int, slice, slice, int, int, int, int) v) impure inline;
+
+;; $StakeHolder$_fun_requireMaster
+((int, int, int, slice, slice, int, int, int, int), ()) $StakeHolder$_fun_requireMaster((int, int, int, slice, slice, int, int, int, int) $self) impure inline;
+
+;; $StakeHolder$_fun_percentOfTimePassed
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_percentOfTimePassed((int, int, int, slice, slice, int, int, int, int) $self, int $start_at, int $finish_at) impure inline_ref;
+
+;; $StakeHolder$_fun_plan
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_plan((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $StakeHolder$_fun_started_at
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_started_at((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $StakeHolder$_fun_finish_at
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_finish_at((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $StakeHolder$_fun_amount
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_amount((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $StakeHolder$_fun_withdrawn
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_withdrawn((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $StakeHolder$_fun_is_holding
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_is_holding((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $StakeHolder$_fun_id
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_id((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref;
+
+;; $MessageParameters$_constructor_to_value_mode_body
+((int, cell, int, slice, int)) $MessageParameters$_constructor_to_value_mode_body(slice $to, int $value, int $mode, cell $body) inline;
+
+;; $Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index
+((int, int, slice, int, int, int)) $Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index(int $query_id, int $started_at, slice $staker, int $amount, int $withdrawn, int $plan_index) inline;
+
+;; $TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index
+((int, int, slice, int, int, int)) $TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index(int $query_id, int $stake_id, slice $staker, int $amount, int $reward, int $plan_index) inline;
+
+;; $MessageParameters$_constructor_value_mode_to_body
+((int, cell, int, slice, int)) $MessageParameters$_constructor_value_mode_to_body(int $value, int $mode, slice $to, cell $body) inline;
+
+;; $StakeProof$_constructor_id_staker_amount_plan_index_reward
+((int, slice, int, int, int)) $StakeProof$_constructor_id_staker_amount_plan_index_reward(int $id, slice $staker, int $amount, int $plan_index, int $reward) inline;
+
+
+;; tact_StakeHolder.stdlib.fc
+global (int, slice, int, slice) __tact_context;
+global slice __tact_context_sender;
+global cell __tact_child_contract_codes;
+global int __tact_randomized;
+
+slice __tact_context_get_sender() inline {
+    return __tact_context_sender;
+}
+
+int $global_now() impure asm """
+    NOW
+""";
+
+() $global_nativeReserve(int $amount, int $mode) impure asm """
+    RAWRESERVE
+""";
+
+() $global_message((int, cell, int, slice, int) $params) impure asm """
+    NEWC
+    b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+    1 STI               // store `bounce`
+    b{000} STSLICECONST // store bounced = false and src = addr_none
+    STSLICE             // store `to`
+    SWAP
+    STGRAMS             // store `value`
+    106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+    STZEROES
+    // → Stack state
+    // s0: Builder
+    // s1: `body`
+    // s2: `mode`
+    STDICT
+    ENDC
+    SWAP
+    SENDRAWMSG
+""";
+
+;; tact_StakeHolder.storage.fc
+;;
+;; Type: MessageParameters
+;; TLB: _ mode:int257 body:Maybe ^cell value:int257 to:address bounce:bool = MessageParameters
+;;
+
+((int, cell, int, slice, int)) $MessageParameters$_constructor_to_value_mode_body(slice $to, int $value, int $mode, cell $body) inline {
+    return ($mode, $body, $value, $to, true);
+}
+
+((int, cell, int, slice, int)) $MessageParameters$_constructor_value_mode_to_body(int $value, int $mode, slice $to, cell $body) inline {
+    return ($mode, $body, $value, $to, true);
+}
+
+;;
+;; Type: Unstake
+;; Header: 0x82bc9424
+;; TLB: unstake#82bc9424 query_id:uint64 started_at:uint32 staker:address amount:coins withdrawn:coins plan_index:uint4 = Unstake
+;;
+
+builder $Unstake$_store(builder build_0, (int, int, slice, int, int, int) v) inline {
+    var (v'query_id, v'started_at, v'staker, v'amount, v'withdrawn, v'plan_index) = v;
+    build_0 = store_uint(build_0, 2193396772, 32);
+    build_0 = build_0.store_uint(v'query_id, 64);
+    build_0 = build_0.store_uint(v'started_at, 32);
+    build_0 = build_0.store_slice(v'staker);
+    build_0 = build_0.store_varuint16(v'amount);
+    build_0 = build_0.store_varuint16(v'withdrawn);
+    build_0 = build_0.store_uint(v'plan_index, 4);
+    return build_0;
+}
+
+cell $Unstake$_store_cell((int, int, slice, int, int, int) v) inline {
+    return $Unstake$_store(begin_cell(), v).end_cell();
+}
+
+((int, int, slice, int, int, int)) $Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index(int $query_id, int $started_at, slice $staker, int $amount, int $withdrawn, int $plan_index) inline {
+    return ($query_id, $started_at, $staker, $amount, $withdrawn, $plan_index);
+}
+
+;;
+;; Type: UnstakeOk
+;; Header: 0x07166d2b
+;; TLB: unstake_ok#07166d2b  = UnstakeOk
+;;
+
+(slice, (tuple)) $UnstakeOk$_load_without_opcode(slice sc_0) inline {
+    return (sc_0, null());
+}
+
+;;
+;; Type: HolderUnstake
+;; Header: 0x4a1b6a2d
+;; TLB: holder_unstake#4a1b6a2d  = HolderUnstake
+;;
+
+(slice, (tuple)) $HolderUnstake$_load_without_opcode(slice sc_0) inline {
+    return (sc_0, null());
+}
+
+;;
+;; Type: HolderTakeReward
+;; Header: 0x1f4cc29f
+;; TLB: holder_take_reward#1f4cc29f query_id:uint16 full_reward:coins = HolderTakeReward
+;;
+
+(slice, ((int, int))) $HolderTakeReward$_load_without_opcode(slice sc_0) inline {
+    var v'query_id = sc_0~load_uint(16);
+    var v'full_reward = sc_0~load_varuint16();
+    return (sc_0, (v'query_id, v'full_reward));
+}
+
+;;
+;; Type: TakeRewardOk
+;; Header: 0xa03f712d
+;; TLB: take_reward_ok#a03f712d query_id:uint16 stake_id:uint16 staker:address amount:coins reward:coins plan_index:uint4 = TakeRewardOk
+;;
+
+builder $TakeRewardOk$_store(builder build_0, (int, int, slice, int, int, int) v) inline {
+    var (v'query_id, v'stake_id, v'staker, v'amount, v'reward, v'plan_index) = v;
+    build_0 = store_uint(build_0, 2688512301, 32);
+    build_0 = build_0.store_uint(v'query_id, 16);
+    build_0 = build_0.store_uint(v'stake_id, 16);
+    build_0 = build_0.store_slice(v'staker);
+    build_0 = build_0.store_varuint16(v'amount);
+    build_0 = build_0.store_varuint16(v'reward);
+    build_0 = build_0.store_uint(v'plan_index, 4);
+    return build_0;
+}
+
+cell $TakeRewardOk$_store_cell((int, int, slice, int, int, int) v) inline {
+    return $TakeRewardOk$_store(begin_cell(), v).end_cell();
+}
+
+((int, int, slice, int, int, int)) $TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index(int $query_id, int $stake_id, slice $staker, int $amount, int $reward, int $plan_index) inline {
+    return ($query_id, $stake_id, $staker, $amount, $reward, $plan_index);
+}
+
+;;
+;; Type: StakeProofRequest
+;; Header: 0x4b60157c
+;; TLB: stake_proof_request#4b60157c reward:coins = StakeProofRequest
+;;
+
+(slice, ((int))) $StakeProofRequest$_load_without_opcode(slice sc_0) inline {
+    var v'reward = sc_0~load_varuint16();
+    return (sc_0, (v'reward));
+}
+
+;;
+;; Type: StakeProof
+;; Header: 0xf1ca386c
+;; TLB: stake_proof#f1ca386c id:int257 staker:address amount:int257 plan_index:uint4 reward:coins = StakeProof
+;;
+
+builder $StakeProof$_store(builder build_0, (int, slice, int, int, int) v) inline {
+    var (v'id, v'staker, v'amount, v'plan_index, v'reward) = v;
+    build_0 = store_uint(build_0, 4056561772, 32);
+    build_0 = build_0.store_int(v'id, 257);
+    build_0 = build_0.store_slice(v'staker);
+    build_0 = build_0.store_int(v'amount, 257);
+    build_0 = build_0.store_uint(v'plan_index, 4);
+    build_0 = build_0.store_varuint16(v'reward);
+    return build_0;
+}
+
+cell $StakeProof$_store_cell((int, slice, int, int, int) v) inline {
+    return $StakeProof$_store(begin_cell(), v).end_cell();
+}
+
+((int, slice, int, int, int)) $StakeProof$_constructor_id_staker_amount_plan_index_reward(int $id, slice $staker, int $amount, int $plan_index, int $reward) inline {
+    return ($id, $staker, $amount, $plan_index, $reward);
+}
+
+;;
+;; Type: StakeHolder
+;; TLB: _ started_at:uint32 finish_at:uint32 id:uint16 master:address staker:address amount:coins withdrawn:coins plan:uint4 holding:bool = StakeHolder
+;;
+
+builder $StakeHolder$_store(builder build_0, (int, int, int, slice, slice, int, int, int, int) v) inline {
+    var (v'started_at, v'finish_at, v'id, v'master, v'staker, v'amount, v'withdrawn, v'plan, v'holding) = v;
+    build_0 = build_0.store_uint(v'started_at, 32);
+    build_0 = build_0.store_uint(v'finish_at, 32);
+    build_0 = build_0.store_uint(v'id, 16);
+    build_0 = build_0.store_slice(v'master);
+    build_0 = build_0.store_slice(v'staker);
+    build_0 = build_0.store_varuint16(v'amount);
+    build_0 = build_0.store_varuint16(v'withdrawn);
+    build_0 = build_0.store_uint(v'plan, 4);
+    build_0 = build_0.store_int(v'holding, 1);
+    return build_0;
+}
+
+(slice, ((int, int, int, slice, slice, int, int, int, int))) $StakeHolder$_load(slice sc_0) inline {
+    var v'started_at = sc_0~load_uint(32);
+    var v'finish_at = sc_0~load_uint(32);
+    var v'id = sc_0~load_uint(16);
+    var v'master = sc_0~load_msg_addr();
+    var v'staker = sc_0~load_msg_addr();
+    var v'amount = sc_0~load_varuint16();
+    var v'withdrawn = sc_0~load_varuint16();
+    var v'plan = sc_0~load_uint(4);
+    var v'holding = sc_0~load_int(1);
+    return (sc_0, (v'started_at, v'finish_at, v'id, v'master, v'staker, v'amount, v'withdrawn, v'plan, v'holding));
+}
+
+(slice, ((int, slice, slice, int, int, int))) $StakeHolder$init$_load(slice sc_0) inline {
+    var v'id = sc_0~load_int(257);
+    var v'master = sc_0~load_msg_addr();
+    var v'staker = sc_0~load_msg_addr();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'amount = sc_1~load_int(257);
+    var v'plan_index = sc_1~load_uint(4);
+    var v'duration = sc_1~load_uint(32);
+    return (sc_0, (v'id, v'master, v'staker, v'amount, v'plan_index, v'duration));
+}
+
+(int, int, int, slice, slice, int, int, int, int) $StakeHolder$_contract_load() impure inline {
+    slice $sc = get_data().begin_parse();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return $sc~$StakeHolder$_load();
+    }
+    else {
+        (int $id, slice $master, slice $staker, int $amount, int $plan_index, int $duration) = $sc~$StakeHolder$init$_load();
+        $sc.end_parse();
+        return $StakeHolder$_contract_init($id, $master, $staker, $amount, $plan_index, $duration);
+    }
+}
+
+() $StakeHolder$_contract_store((int, int, int, slice, slice, int, int, int, int) v) impure inline {
+    builder b = begin_cell();
+    b = b.store_int(true, 1);
+    b = $StakeHolder$_store(b, v);
+    set_data(b.end_cell());
+}
+
+;;
+;; Contract StakeHolder functions
+;;
+
+(int, int, int, slice, slice, int, int, int, int) $StakeHolder$_contract_init(int $id, slice $master, slice $staker, int $amount, int $plan_index, int $duration) impure inline {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = (null(), null(), null(), null(), null(), null(), 0, null(), true);
+    throw_unless(11184, ( equal_slices_bits($master, __tact_context_get_sender()) ));
+    $self'id = $id;
+    $self'started_at = $global_now();
+    $self'finish_at = ($global_now() + $duration);
+    $self'master = $master;
+    $self'staker = $staker;
+    $self'amount = $amount;
+    $self'plan = $plan_index;
+    $global_nativeReserve(1000000, 2);
+    return ($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding);
+}
+
+((int, int, int, slice, slice, int, int, int, int), ()) $StakeHolder$_fun_requireMaster((int, int, int, slice, slice, int, int, int, int) $self) impure inline {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    throw_unless(11184, ( equal_slices_bits($self'master, __tact_context_get_sender()) ));
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), ());
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_percentOfTimePassed((int, int, int, slice, slice, int, int, int, int) $self, int $start_at, int $finish_at) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    int $total = ($finish_at - $start_at);
+    int $passed = ($global_now() - $start_at);
+    if (($passed <= 0)) {
+        var $fresh$ret_14 = 0;
+        return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_14);
+    }
+    if (($passed >= $total)) {
+        var $fresh$ret_15 = 100;
+        return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_15);
+    }
+    var $fresh$ret_16 = (($passed * 100) / $total);
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_16);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_plan((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_17 = $self'plan;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_17);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_started_at((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_18 = $self'started_at;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_18);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_finish_at((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_19 = $self'finish_at;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_19);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_amount((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_20 = $self'amount;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_20);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_withdrawn((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_21 = $self'withdrawn;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_21);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_is_holding((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_22 = $self'holding;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_22);
+}
+
+((int, int, int, slice, slice, int, int, int, int), int) $StakeHolder$_fun_id((int, int, int, slice, slice, int, int, int, int) $self) impure inline_ref {
+    var (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)) = $self;
+    var $fresh$ret_23 = $self'id;
+    return (($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding), $fresh$ret_23);
+}
+
+;;
+;; Get methods of a Contract StakeHolder
+;;
+
+_ %plan() method_id(71948) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_plan();
+    return res;
+}
+
+_ %started_at() method_id(125425) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_started_at();
+    return res;
+}
+
+_ %finish_at() method_id(113606) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_finish_at();
+    return res;
+}
+
+_ %amount() method_id(101100) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_amount();
+    return res;
+}
+
+_ %withdrawn() method_id(87558) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_withdrawn();
+    return res;
+}
+
+_ %is_holding() method_id(94406) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_is_holding();
+    return res;
+}
+
+_ %id() method_id(105872) {
+    var self = $StakeHolder$_contract_load();
+    var res = self~$StakeHolder$_fun_id();
+    return res;
+}
+
+;;
+;; Routing of a Contract StakeHolder
+;;
+
+;; message opcode reader utility: only binary receivers
+;; Returns 32 bit message opcode, otherwise throws the "Invalid incoming message" exit code
+(slice, int) ~load_opcode_internal(slice s) asm( -> 1 0) "32 LDUQ 130 THROWIFNOT";
+
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+    
+    ;; Context
+    var cs = in_msg_cell.begin_parse();
+    cs~skip_bits(2);
+    var msg_bounceable = cs~load_int(1);
+    var msg_bounced = cs~load_int(1);
+    slice msg_sender_addr = cs~load_msg_addr();
+    __tact_context = (msg_bounceable, msg_sender_addr, msg_value, cs);
+    __tact_context_sender = msg_sender_addr;
+    
+    ;; Load contract data
+    var ($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding) = $StakeHolder$_contract_load();
+    
+    ;; Handle bounced messages
+    if (msg_bounced) { return (); }
+    int op = 0;
+    int in_msg_length = slice_bits(in_msg);
+    if (in_msg_length >= 32) {
+        op = in_msg~load_uint(32);
+    }
+    ;; Receive HolderUnstake message
+    if (op == 1243310637) {
+        var $msg = in_msg~$HolderUnstake$_load_without_opcode();
+        throw_unless(25558, ( equal_slices_bits($self'staker, __tact_context_get_sender()) ));
+        throw_unless(36101, ($global_now() >= $self'finish_at));
+        throw_unless(17470, $self'holding);
+        $global_message($MessageParameters$_constructor_to_value_mode_body($self'master, 0, 128, $Unstake$_store_cell($Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index($self'id, $self'started_at, $self'staker, $self'amount, $self'withdrawn, $self'plan))));
+        $StakeHolder$_contract_store(($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding));
+        return ();
+    }
+    
+    ;; Receive HolderTakeReward message
+    if (op == 525124255) {
+        var ($msg'query_id, $msg'full_reward) = in_msg~$HolderTakeReward$_load_without_opcode();
+        ($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)~$StakeHolder$_fun_requireMaster();
+        throw_unless(31749, ($global_now() <= $self'finish_at));
+        throw_unless(17470, $self'holding);
+        int $percent_of_time_passed = ($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)~$StakeHolder$_fun_percentOfTimePassed($self'started_at, $self'finish_at);
+        int $to_withdraw = ((($msg'full_reward / 100) * $percent_of_time_passed) - $self'withdrawn);
+        throw_unless(38505, ($to_withdraw > 0));
+        $self'withdrawn = $self'withdrawn + $to_withdraw;
+        $global_message($MessageParameters$_constructor_to_value_mode_body($self'master, 0, 64, $TakeRewardOk$_store_cell($TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index($msg'query_id, $self'id, $self'staker, $self'amount, $to_withdraw, $self'plan))));
+        $StakeHolder$_contract_store(($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding));
+        return ();
+    }
+    
+    ;; Receive UnstakeOk message
+    if (op == 118910251) {
+        var $msg = in_msg~$UnstakeOk$_load_without_opcode();
+        ($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)~$StakeHolder$_fun_requireMaster();
+        $self'holding = false;
+        $StakeHolder$_contract_store(($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding));
+        return ();
+    }
+    
+    ;; Receive StakeProofRequest message
+    if (op == 1264588156) {
+        var ($msg'reward) = in_msg~$StakeProofRequest$_load_without_opcode();
+        ($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding)~$StakeHolder$_fun_requireMaster();
+        $global_message($MessageParameters$_constructor_value_mode_to_body(0, 64, __tact_context_get_sender(), $StakeProof$_store_cell($StakeProof$_constructor_id_staker_amount_plan_index_reward($self'id, $self'staker, $self'amount, $self'plan, $msg'reward))));
+        $StakeHolder$_contract_store(($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding));
+        return ();
+    }
+    
+    ;; Receive empty message
+    if ((op == 0) & (in_msg_length <= 32)) {
+        $StakeHolder$_contract_store(($self'started_at, $self'finish_at, $self'id, $self'master, $self'staker, $self'amount, $self'withdrawn, $self'plan, $self'holding));
+        return ();
+    }
+    ;; Throw if not handled
+    throw(130);
+}
+
+
+() __tact_selector_hack_asm() impure asm """
+@atend @ 1 {
+        execute current@ context@ current!
+        {
+            // The core idea of this function is to save gas by avoiding unnecessary dict jump, when recv_internal/recv_external is called
+            // We want to extract recv_internal/recv_external from the dict and select needed function
+            // not by jumping to the needed function by it's index, but by using usual IF statements.
+
+            }END> b> // Close previous builder, now we have a cell of previous code on top of the stack
+
+            <{ // Start of the new code builder
+                SETCP0
+                // Swap the new code builder with the previous code, now we have previous code on top of the stack
+                swap
+                // Transform cell to slice and load first ref from the previous code, now we have the dict on top of the stack
+                <s ref@
+
+                // Extract the recv_internal from the dict
+                dup 0 swap @procdictkeylen idict@ { "internal shortcut error" abort } ifnot
+                swap
+
+                // Delete the recv_internal from the dict
+                0 swap @procdictkeylen idict- drop
+                // Delete the recv_external from the dict (it's okay if it's not there)
+                -1 swap @procdictkeylen idict- drop
+                // Delete the __tact_selector_hack from the dict
+                65535 swap @procdictkeylen idict- drop
+
+                // Bring the code builder from the bottom of the stack
+                // because if recv_external extraction is optional, and the number of elements on the stack is not fixed
+                depth 1- roll
+                // Swap with the dict from which we extracted recv_internal and (maybe) recv_external
+                swap
+
+                // Check if the dict is empty
+                dup null?
+                // Store a copy of this flag in the bottom of the stack
+                dup depth 1- -roll
+                {
+                    // If the dict is empty, just drop it (it will be null if it's empty)
+                    drop
+                }
+                {
+                    // If the dict is not empty, prepare continuation to be stored in c3
+                    <{
+                        // Save this dict as first ref in this continuation, it will be pushed in runtime by DICTPUSHCONST
+                        swap @procdictkeylen DICTPUSHCONST
+                        // Jump to the needed function by it's index
+                        DICTIGETJMPZ
+                        // If such key is not found, throw 11 along with the key as an argument
+                        11 THROWARG
+                    }> PUSHCONT
+                    // Store the continuation in c3
+                    c3 POP
+                } cond
+
+                // Function id is on top of the (runtime) stack
+                DUP IFNOTJMP:<{
+                    // place recv_internal here
+                    DROP swap @addop
+                }>
+
+                // Bring back the flag, indicating if the dict is empty or not from the bottom of the stack
+                depth 1- roll
+                {
+                    // If the dict is empty, throw 11
+                    11 THROWARG
+                }
+                {
+                    // If the dict is not empty, jump to continuation from c3
+                    c3 PUSH JMPX
+                } cond
+            }> b>
+        } : }END>c
+        current@ context! current!
+    } does @atend !
+""";
+
+() __tact_selector_hack() method_id(65535) {
+    return __tact_selector_hack_asm();
+}

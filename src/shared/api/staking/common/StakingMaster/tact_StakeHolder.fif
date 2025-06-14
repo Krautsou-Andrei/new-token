@@ -1,0 +1,614 @@
+// automatically generated from `@stdlib/std/stdlib.fc` `/Users/a1/Downloads/JettonStaking 2/build/StakingMaster/tact_StakeHolder.fc` 
+PROGRAM{
+  DECLPROC __tact_context_get_sender
+  DECLPROC $Unstake$_store
+  DECLPROC $Unstake$_store_cell
+  DECLPROC $UnstakeOk$_load_without_opcode
+  DECLPROC $HolderUnstake$_load_without_opcode
+  DECLPROC $HolderTakeReward$_load_without_opcode
+  DECLPROC $TakeRewardOk$_store
+  DECLPROC $TakeRewardOk$_store_cell
+  DECLPROC $StakeProofRequest$_load_without_opcode
+  DECLPROC $StakeProof$_store
+  DECLPROC $StakeProof$_store_cell
+  DECLPROC $StakeHolder$_store
+  DECLPROC $StakeHolder$_load
+  DECLPROC $StakeHolder$init$_load
+  DECLPROC $StakeHolder$_contract_init
+  DECLPROC $StakeHolder$_contract_load
+  DECLPROC $StakeHolder$_contract_store
+  DECLPROC $StakeHolder$_fun_requireMaster
+  DECLPROC $StakeHolder$_fun_percentOfTimePassed
+  DECLPROC $StakeHolder$_fun_plan
+  DECLPROC $StakeHolder$_fun_started_at
+  DECLPROC $StakeHolder$_fun_finish_at
+  DECLPROC $StakeHolder$_fun_amount
+  DECLPROC $StakeHolder$_fun_withdrawn
+  DECLPROC $StakeHolder$_fun_is_holding
+  DECLPROC $StakeHolder$_fun_id
+  DECLPROC $MessageParameters$_constructor_to_value_mode_body
+  DECLPROC $Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index
+  DECLPROC $TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index
+  DECLPROC $MessageParameters$_constructor_value_mode_to_body
+  DECLPROC $StakeProof$_constructor_id_staker_amount_plan_index_reward
+  71948 DECLMETHOD %plan
+  125425 DECLMETHOD %started_at
+  113606 DECLMETHOD %finish_at
+  101100 DECLMETHOD %amount
+  87558 DECLMETHOD %withdrawn
+  94406 DECLMETHOD %is_holding
+  105872 DECLMETHOD %id
+  DECLPROC recv_internal
+  65535 DECLMETHOD __tact_selector_hack
+  DECLGLOBVAR __tact_context
+  DECLGLOBVAR __tact_context_sender
+  DECLGLOBVAR __tact_child_contract_codes
+  DECLGLOBVAR __tact_randomized
+  __tact_context_get_sender PROCINLINE:<{
+    __tact_context_sender GETGLOB
+  }>
+  $Unstake$_store PROCINLINE:<{
+    2193396772 PUSHINT
+    s0 s7 XCHG2
+    32 STU
+    s1 s5 XCHG
+    64 STU
+    s1 s3 XCHG
+    32 STU
+    SWAP
+    STSLICER
+    SWAP
+    STVARUINT16
+    SWAP
+    STVARUINT16
+    4 STU
+  }>
+  $Unstake$_store_cell PROCINLINE:<{
+    NEWC
+    6 -ROLL
+    $Unstake$_store INLINECALLDICT
+    ENDC
+  }>
+  $UnstakeOk$_load_without_opcode PROCINLINE:<{
+    PUSHNULL
+  }>
+  $HolderUnstake$_load_without_opcode PROCINLINE:<{
+    PUSHNULL
+  }>
+  $HolderTakeReward$_load_without_opcode PROCINLINE:<{
+    16 LDU
+    LDVARUINT16
+    -ROT
+  }>
+  $TakeRewardOk$_store PROCINLINE:<{
+    2688512301 PUSHINT
+    s0 s7 XCHG2
+    32 STU
+    s1 s5 XCHG
+    16 STU
+    s1 s3 XCHG
+    16 STU
+    SWAP
+    STSLICER
+    SWAP
+    STVARUINT16
+    SWAP
+    STVARUINT16
+    4 STU
+  }>
+  $TakeRewardOk$_store_cell PROCINLINE:<{
+    NEWC
+    6 -ROLL
+    $TakeRewardOk$_store INLINECALLDICT
+    ENDC
+  }>
+  $StakeProofRequest$_load_without_opcode PROCINLINE:<{
+    LDVARUINT16
+    SWAP
+  }>
+  $StakeProof$_store PROCINLINE:<{
+    4056561772 PUSHINT
+    s0 s6 XCHG2
+    32 STU
+    s1 s4 XCHG
+    257 PUSHINT
+    STIX
+    ROT
+    STSLICER
+    257 PUSHINT
+    STIX
+    4 STU
+    SWAP
+    STVARUINT16
+  }>
+  $StakeProof$_store_cell PROCINLINE:<{
+    NEWC
+    5 -ROLL
+    $StakeProof$_store INLINECALLDICT
+    ENDC
+  }>
+  $StakeHolder$_store PROCINLINE:<{
+    s8 s9 XCHG2
+    32 STU
+    s1 s6 XCHG
+    32 STU
+    s1 s4 XCHG
+    16 STU
+    ROT
+    STSLICER
+    SWAP
+    STSLICER
+    SWAP
+    STVARUINT16
+    SWAP
+    STVARUINT16
+    4 STU
+    1 STI
+  }>
+  $StakeHolder$_load PROCINLINE:<{
+    32 LDU
+    32 LDU
+    16 LDU
+    LDMSGADDR
+    LDMSGADDR
+    LDVARUINT16
+    LDVARUINT16
+    4 LDU
+    1 LDI
+    9 -ROLL
+  }>
+  $StakeHolder$init$_load PROCINLINE:<{
+    257 PUSHINT
+    LDIX
+    LDMSGADDR
+    LDMSGADDR
+    LDREF
+    SWAP
+    CTOS
+    257 PUSHINT
+    LDIX
+    4 LDU
+    32 LDU
+    DROP
+    s3 s6 XCHG
+    s3 s5 XCHG
+    s3 s4 XCHG
+  }>
+  $StakeHolder$_contract_init PROCINLINE:<{
+    0 PUSHINT
+    TRUE
+    11184 PUSHINT
+    __tact_context_get_sender INLINECALLDICT
+    s8 s(-1) PUXC
+    SDEQ
+    THROWANYIFNOT
+        NOW
+        NOW
+    s0 s4 XCHG2
+    ADD
+    1000000 PUSHINT
+    2 PUSHINT
+        RAWRESERVE
+    s3 s8 XCHG
+    s0 s7 XCHG
+    s3 s6 XCHG
+    s0 s5 XCHG
+    s0 s3 XCHG
+    s4 s4 XCHG2
+  }>
+  $StakeHolder$_contract_load PROCINLINE:<{
+    c4 PUSH
+    CTOS
+    1 LDI
+    SWAP
+    IF:<{
+      $StakeHolder$_load INLINECALLDICT
+      1 9 BLKDROP2
+    }>ELSE<{
+      $StakeHolder$init$_load INLINECALLDICT
+      s0 s6 XCHG
+      ENDS
+      5 ROLL
+      $StakeHolder$_contract_init INLINECALLDICT
+    }>
+  }>
+  $StakeHolder$_contract_store PROCINLINE:<{
+    NEWC
+    TRUE
+    SWAP
+    1 STI
+    9 -ROLL
+    $StakeHolder$_store INLINECALLDICT
+    ENDC
+    c4 POP
+  }>
+  $StakeHolder$_fun_requireMaster PROCINLINE:<{
+    11184 PUSHINT
+    __tact_context_get_sender INLINECALLDICT
+    s7 s(-1) PUXC
+    SDEQ
+    THROWANYIFNOT
+  }>
+  $StakeHolder$_fun_percentOfTimePassed PROCREF:<{
+    OVER
+    SUB
+        NOW
+    ROT
+    SUB
+    DUP
+    1 LESSINT
+    IFJMP:<{
+      2DROP
+      0 PUSHINT
+    }>
+    s0 s1 PUSH2
+    GEQ
+    IFJMP:<{
+      2DROP
+      100 PUSHINT
+    }>
+    100 MULCONST
+    SWAP
+    DIV
+  }>
+  $StakeHolder$_fun_plan PROCREF:<{
+    OVER
+  }>
+  $StakeHolder$_fun_started_at PROCREF:<{
+    s8 PUSH
+  }>
+  $StakeHolder$_fun_finish_at PROCREF:<{
+    s7 PUSH
+  }>
+  $StakeHolder$_fun_amount PROCREF:<{
+    s3 PUSH
+  }>
+  $StakeHolder$_fun_withdrawn PROCREF:<{
+    s2 PUSH
+  }>
+  $StakeHolder$_fun_is_holding PROCREF:<{
+    DUP
+  }>
+  $StakeHolder$_fun_id PROCREF:<{
+    s6 PUSH
+  }>
+  $MessageParameters$_constructor_to_value_mode_body PROCINLINE:<{
+    s0 s0 s3 XCHG3
+    TRUE
+  }>
+  $Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index PROCINLINE:<{
+  }>
+  $TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index PROCINLINE:<{
+  }>
+  $MessageParameters$_constructor_value_mode_to_body PROCINLINE:<{
+    s0 s3 s3 XCHG3
+    TRUE
+  }>
+  $StakeProof$_constructor_id_staker_amount_plan_index_reward PROCINLINE:<{
+  }>
+  %plan PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_plan INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  %started_at PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_started_at INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  %finish_at PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_finish_at INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  %amount PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_amount INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  %withdrawn PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_withdrawn INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  %is_holding PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_is_holding INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  %id PROC:<{
+    $StakeHolder$_contract_load INLINECALLDICT
+    $StakeHolder$_fun_id INLINECALLDICT
+    9 1 BLKDROP2
+  }>
+  recv_internal PROC:<{
+    SWAP
+    CTOS
+    2 PUSHINT
+    SDSKIPFIRST
+    1 LDI
+    1 LDI
+    LDMSGADDR
+    OVER
+    s3 s4 XCHG
+    s6 s6 XCHG2
+    4 TUPLE
+    __tact_context SETGLOB
+    s0 s2 XCHG
+    __tact_context_sender SETGLOB
+    $StakeHolder$_contract_load INLINECALLDICT
+    s0 s10 XCHG
+    IFJMP:<{
+      10 BLKDROP
+    }>
+    0 PUSHINT
+    s9 PUSH
+    SBITS
+    DUP
+    31 GTINT
+    IF:<{
+      NIP
+      s0 s9 XCHG
+      32 LDU
+      s0 s10 XCHG
+    }>
+    OVER
+    1243310637 PUSHINT
+    EQUAL
+    IFJMP:<{
+      2DROP
+      s8 POP
+      25558 PUSHINT
+      __tact_context_get_sender INLINECALLDICT
+      s4 s(-1) PUXC
+      SDEQ
+      THROWANYIFNOT
+      36101 PUSHINT
+          NOW
+      s7 PUSH
+      GEQ
+      THROWANYIFNOT
+      17470 PUSHINT
+      s9 PUSH
+      THROWANYIFNOT
+      0 PUSHINT
+      7 PUSHPOW2
+      s6 s8 s4 PUSH3
+      s6 s5 s12 PUSH3
+      $Unstake$_constructor_query_id_started_at_staker_amount_withdrawn_plan_index INLINECALLDICT
+      $Unstake$_store_cell INLINECALLDICT
+      s6 PUSH
+      3 -ROLL
+      $MessageParameters$_constructor_to_value_mode_body INLINECALLDICT
+          NEWC
+          b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+          1 STI               // store `bounce`
+          b{000} STSLICECONST // store bounced = false and src = addr_none
+          STSLICE             // store `to`
+          SWAP
+          STGRAMS             // store `value`
+          106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+          STZEROES
+          // → Stack state
+          // s0: Builder
+          // s1: `body`
+          // s2: `mode`
+          STDICT
+          ENDC
+          SWAP
+          SENDRAWMSG
+      s6 s8 XCHG
+      2 6 BLKSWAP
+      $StakeHolder$_contract_store INLINECALLDICT
+    }>
+    OVER
+    525124255 PUSHINT
+    EQUAL
+    IFJMP:<{
+      2DROP
+      s0 s8 XCHG
+      $HolderTakeReward$_load_without_opcode INLINECALLDICT
+      s2 POP
+      s9 s10 XCHG2
+      $StakeHolder$_fun_requireMaster INLINECALLDICT
+      31749 PUSHINT
+          NOW
+      s9 PUSH
+      LEQ
+      THROWANYIFNOT
+      17470 PUSHINT
+      OVER
+      THROWANYIFNOT
+      s8 s7 PUSH2
+      $StakeHolder$_fun_percentOfTimePassed INLINECALLDICT
+      s0 s10 XCHG
+      100 PUSHINT
+      DIV
+      s0 s10 XCHG2
+      MUL
+      s2 PUSH
+      SUB
+      38505 PUSHINT
+      OVER
+      0 GTINT
+      THROWANYIFNOT
+      s2 s2 XCPU
+      ADD
+      0 PUSHINT
+      s11 s7 s5 XCPU2
+      s6 PUSH
+      64 PUSHINT
+      s7 s6 XCPU
+      $TakeRewardOk$_constructor_query_id_stake_id_staker_amount_reward_plan_index INLINECALLDICT
+      $TakeRewardOk$_store_cell INLINECALLDICT
+      s6 PUSH
+      s12 s1 s3 XCHG3
+      s4 s4 XCHG2
+      $MessageParameters$_constructor_to_value_mode_body INLINECALLDICT
+          NEWC
+          b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+          1 STI               // store `bounce`
+          b{000} STSLICECONST // store bounced = false and src = addr_none
+          STSLICE             // store `to`
+          SWAP
+          STGRAMS             // store `value`
+          106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+          STZEROES
+          // → Stack state
+          // s0: Builder
+          // s1: `body`
+          // s2: `mode`
+          STDICT
+          ENDC
+          SWAP
+          SENDRAWMSG
+      s6 s8 XCHG
+      s5 s7 XCHG
+      s4 s6 XCHG
+      s3 s5 XCHG
+      s4 s0 s3 XCHG3
+      $StakeHolder$_contract_store INLINECALLDICT
+    }>
+    OVER
+    118910251 PUSHINT
+    EQUAL
+    IFJMP:<{
+      2DROP
+      s8 POP
+      s6 s8 XCHG
+      2 6 BLKSWAP
+      $StakeHolder$_fun_requireMaster INLINECALLDICT
+      DROP
+      FALSE
+      $StakeHolder$_contract_store INLINECALLDICT
+    }>
+    OVER
+    1264588156 PUSHINT
+    EQUAL
+    IFJMP:<{
+      2DROP
+      s0 s8 XCHG
+      $StakeProofRequest$_load_without_opcode INLINECALLDICT
+      NIP
+      s7 s8 XCHG
+      s6 s7 XCHG
+      s5 s6 XCHG
+      s4 s5 XCHG
+      s3 s4 XCHG
+      s1 s3 s9 XCHG3
+      $StakeHolder$_fun_requireMaster INLINECALLDICT
+      0 PUSHINT
+      64 PUSHINT
+      __tact_context_get_sender INLINECALLDICT
+      s9 s7 s(-2) PU2XC
+      s8 s6 s(-2) PU2XC
+      s0 16 s() XCHG
+      $StakeProof$_constructor_id_staker_amount_plan_index_reward INLINECALLDICT
+      $StakeProof$_store_cell INLINECALLDICT
+      s1 s3 s0 XCHG3
+      s1 s12 XCHG
+      $MessageParameters$_constructor_value_mode_to_body INLINECALLDICT
+          NEWC
+          b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+          1 STI               // store `bounce`
+          b{000} STSLICECONST // store bounced = false and src = addr_none
+          STSLICE             // store `to`
+          SWAP
+          STGRAMS             // store `value`
+          106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+          STZEROES
+          // → Stack state
+          // s0: Builder
+          // s1: `body`
+          // s2: `mode`
+          STDICT
+          ENDC
+          SWAP
+          SENDRAWMSG
+      8 ROLL
+      $StakeHolder$_contract_store INLINECALLDICT
+    }>
+    s10 POP
+    0 EQINT
+    s0 s9 XCHG
+    33 LESSINT
+    s1 s9 XCHG
+    AND
+    IFJMP:<{
+      s6 s8 XCHG
+      2 6 BLKSWAP
+      $StakeHolder$_contract_store INLINECALLDICT
+    }>
+    9 BLKDROP
+    130 THROW
+  }>
+  __tact_selector_hack PROC:<{
+    @atend @ 1 {
+            execute current@ context@ current!
+            {
+                // The core idea of this function is to save gas by avoiding unnecessary dict jump, when recv_internal/recv_external is called
+                // We want to extract recv_internal/recv_external from the dict and select needed function
+                // not by jumping to the needed function by it's index, but by using usual IF statements.
+                }END> b> // Close previous builder, now we have a cell of previous code on top of the stack
+                <{ // Start of the new code builder
+                    SETCP0
+                    // Swap the new code builder with the previous code, now we have previous code on top of the stack
+                    swap
+                    // Transform cell to slice and load first ref from the previous code, now we have the dict on top of the stack
+                    <s ref@
+                    // Extract the recv_internal from the dict
+                    dup 0 swap @procdictkeylen idict@ { "internal shortcut error" abort } ifnot
+                    swap
+                    // Delete the recv_internal from the dict
+                    0 swap @procdictkeylen idict- drop
+                    // Delete the recv_external from the dict (it's okay if it's not there)
+                    -1 swap @procdictkeylen idict- drop
+                    // Delete the __tact_selector_hack from the dict
+                    65535 swap @procdictkeylen idict- drop
+                    // Bring the code builder from the bottom of the stack
+                    // because if recv_external extraction is optional, and the number of elements on the stack is not fixed
+                    depth 1- roll
+                    // Swap with the dict from which we extracted recv_internal and (maybe) recv_external
+                    swap
+                    // Check if the dict is empty
+                    dup null?
+                    // Store a copy of this flag in the bottom of the stack
+                    dup depth 1- -roll
+                    {
+                        // If the dict is empty, just drop it (it will be null if it's empty)
+                        drop
+                    }
+                    {
+                        // If the dict is not empty, prepare continuation to be stored in c3
+                        <{
+                            // Save this dict as first ref in this continuation, it will be pushed in runtime by DICTPUSHCONST
+                            swap @procdictkeylen DICTPUSHCONST
+                            // Jump to the needed function by it's index
+                            DICTIGETJMPZ
+                            // If such key is not found, throw 11 along with the key as an argument
+                            11 THROWARG
+                        }> PUSHCONT
+                        // Store the continuation in c3
+                        c3 POP
+                    } cond
+                    // Function id is on top of the (runtime) stack
+                    DUP IFNOTJMP:<{
+                        // place recv_internal here
+                        DROP swap @addop
+                    }>
+                    // Bring back the flag, indicating if the dict is empty or not from the bottom of the stack
+                    depth 1- roll
+                    {
+                        // If the dict is empty, throw 11
+                        11 THROWARG
+                    }
+                    {
+                        // If the dict is not empty, jump to continuation from c3
+                        c3 PUSH JMPX
+                    } cond
+                }> b>
+            } : }END>c
+            current@ context! current!
+        } does @atend !
+  }>
+}END>c

@@ -31,6 +31,7 @@
     "@ton-api/client": "^0.0.1-beta.2",
     "@ton/core": "^0.60.1",
     "@ton/crypto": "^3.3.0",
+    "@ton/ton": "^15.2.1",
     "@tonconnect/ui-react": "^2.0.0",
     "@types/mixpanel-browser": "^2.60.0",
     "@vkruglikov/react-telegram-web-app": "^2.1.9",
@@ -59,6 +60,7 @@
     "tweetnacl-util": "^0.15.1",
     "viem": "2.x",
     "wagmi": "^2.15.6",
+    "winston": "^3.17.0",
     "zod": "^3.24.4",
     "zustand": "^5.0.4"
   },
