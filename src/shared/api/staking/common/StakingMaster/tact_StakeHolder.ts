@@ -2114,7 +2114,7 @@ export type UnstakeOk = {
   $$type: 'UnstakeOk';
 };
 
-export function storeUnstakeOk(src: UnstakeOk) {
+export function storeUnstakeOk(_src: UnstakeOk) {
   return (builder: Builder) => {
     const b_0 = builder;
     b_0.storeUint(118910251, 32);
@@ -2129,15 +2129,15 @@ export function loadUnstakeOk(slice: Slice) {
   return { $$type: 'UnstakeOk' as const };
 }
 
-export function loadTupleUnstakeOk(source: TupleReader) {
+export function loadTupleUnstakeOk(_source: TupleReader) {
   return { $$type: 'UnstakeOk' as const };
 }
 
-export function loadGetterTupleUnstakeOk(source: TupleReader) {
+export function loadGetterTupleUnstakeOk(_source: TupleReader) {
   return { $$type: 'UnstakeOk' as const };
 }
 
-export function storeTupleUnstakeOk(source: UnstakeOk) {
+export function storeTupleUnstakeOk(_source: UnstakeOk) {
   const builder = new TupleBuilder();
   return builder.build();
 }
@@ -2157,7 +2157,7 @@ export type StakeRejected = {
   $$type: 'StakeRejected';
 };
 
-export function storeStakeRejected(src: StakeRejected) {
+export function storeStakeRejected(_src: StakeRejected) {
   return (builder: Builder) => {
     const b_0 = builder;
     b_0.storeUint(3833305740, 32);
@@ -2172,15 +2172,15 @@ export function loadStakeRejected(slice: Slice) {
   return { $$type: 'StakeRejected' as const };
 }
 
-export function loadTupleStakeRejected(source: TupleReader) {
+export function loadTupleStakeRejected(_source: TupleReader) {
   return { $$type: 'StakeRejected' as const };
 }
 
-export function loadGetterTupleStakeRejected(source: TupleReader) {
+export function loadGetterTupleStakeRejected(_source: TupleReader) {
   return { $$type: 'StakeRejected' as const };
 }
 
-export function storeTupleStakeRejected(source: StakeRejected) {
+export function storeTupleStakeRejected(_source: StakeRejected) {
   const builder = new TupleBuilder();
   return builder.build();
 }
@@ -2200,7 +2200,7 @@ export type HolderUnstake = {
   $$type: 'HolderUnstake';
 };
 
-export function storeHolderUnstake(src: HolderUnstake) {
+export function storeHolderUnstake(_src: HolderUnstake) {
   return (builder: Builder) => {
     const b_0 = builder;
     b_0.storeUint(1243310637, 32);
@@ -2215,15 +2215,15 @@ export function loadHolderUnstake(slice: Slice) {
   return { $$type: 'HolderUnstake' as const };
 }
 
-export function loadTupleHolderUnstake(source: TupleReader) {
+export function loadTupleHolderUnstake(_source: TupleReader) {
   return { $$type: 'HolderUnstake' as const };
 }
 
-export function loadGetterTupleHolderUnstake(source: TupleReader) {
+export function loadGetterTupleHolderUnstake(_source: TupleReader) {
   return { $$type: 'HolderUnstake' as const };
 }
 
-export function storeTupleHolderUnstake(source: HolderUnstake) {
+export function storeTupleHolderUnstake(_source: HolderUnstake) {
   const builder = new TupleBuilder();
   return builder.build();
 }

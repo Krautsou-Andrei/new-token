@@ -4,11 +4,10 @@ import { Buffer } from 'buffer';
 import { Api, HttpClient } from '@ton-api/client';
 import { Address, Cell } from '@ton/core';
 
-// import { env } from '../consts';
+import { env } from '../consts';
 
 const httpClient = new HttpClient({
-  // baseUrl: `${env.tonapiUrl}`,
-  baseUrl: 'https://testnet.tonapi.io',
+  baseUrl: `${env.tonapiUrl}`,
   baseApiParams: {
     headers: {
       'Content-type': 'application/json',

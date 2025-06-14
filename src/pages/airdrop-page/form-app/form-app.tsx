@@ -56,6 +56,7 @@ export const FormApp = ({ ...props }: FormAppProps) => {
             <SwiperSlide key={index}>
               <SlideApp
                 title={slideApp.title}
+                address={slideApp.address}
                 pt={activeIndex + 2 === index + 1 ? 5 : 8}
                 color={
                   activeIndex + 2 === index + 1

@@ -1,6 +1,8 @@
-export const SLIDES = [
-  { title: 'Ton' },
+import { env } from '@/shared/consts';
+
+export const SLIDES: { title: string; address?: string }[] = [
+  { title: 'Ton', address: env.minterTon },
   { title: 'СБП' },
-  { title: 'USDT' },
+  { title: 'USDT', address: env.minterUSDT },
   { title: 'ЧХЗ' },
 ];

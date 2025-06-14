@@ -7,4 +7,6 @@ export const env = {
   walletConnetProjctId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID,
   stakeMasterAddress: import.meta.env.VITE_APP_STAKE_MASTER,
   jettonMasterAddress: import.meta.env.VITE_APP_JETTON_MASTER,
+  minterTon: import.meta.env.VITE_APP_MINTER_TON,
+  minterUSDT: import.meta.env.VITE_APP_MINTER_USDT,
 };
