@@ -33,8 +33,9 @@ export const AppTransactionModal = memo(
     useEffect(() => {
       if (isSuccessPayment) {
         window.open(link, '_blank');
+        onClose();
       }
-    }, [isSuccessPayment, link]);
+    }, [isSuccessPayment, link, onClose]);
 
     return (
       <AppModal isOpen={isOpen} onClose={onClose} title={'Пополнить'}>
