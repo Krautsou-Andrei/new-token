@@ -15,10 +15,11 @@ export const useStaking = () => {
   const createMSG = async (
     id: number,
     amount: number,
-    addressJetton: string,
-    addressStaking: string
+    senderAddress: string,
+    addressStaking: string,
+    addressJetton: string
   ) => {
-    console.log(id, amount, addressJetton, addressStaking);
+    console.log(id, amount, senderAddress, addressStaking, addressJetton);
     return {
       address: 'walletAddress' as string, //адрес, кужа отправляем
       amount: '150000000', //газ для транзакции
@@ -35,8 +36,14 @@ export const useStaking = () => {
     const addressStaking = env.stakeMasterAddress;
 
     try {
-      if (senderAddress && addressStaking && addressJetton && amount) {
-        const msg = await createMSG(id, amount, senderAddress, addressStaking);
+      if (id && senderAddress && addressStaking && addressJetton && amount) {
+        const msg = await createMSG(
+          id,
+          amount,
+          senderAddress,
+          addressStaking,
+          addressJetton
+        );
 
         const secondsInMinute = 60;
         const minutes = 10;
