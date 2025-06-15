@@ -1,4 +1,4 @@
-import type { RequestConfig } from 'api';
+import type { RequestConfig, Stake } from 'api';
 
 import apiInstance from '../api-instance';
 import { addAuthorizationHeader } from '../auth/me';
@@ -41,7 +41,7 @@ export const getAllStakingUser = ({
 }: GetAllStakingUserConfig) => {
   const headers = addAuthorizationHeader(config);
 
-  return apiInstance.get<void>(`/staking/user/${params.tgId}`, {
+  return apiInstance.get<Stake[]>(`/staking/user/${params.tgId}`, {
     ...headers,
     signal: config?.signal,
   });

@@ -17,10 +17,12 @@ import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-a
 import { sliseAddress } from '@/shared/lib/utils/slise-address';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppLayoutBound } from '@/shared/ui/app-layout-bound';
+import { AppSeparator } from '@/shared/ui/app-separator';
 import { AppTonButton } from '@/shared/ui/app-ton-button';
 
 import { FormApp } from './form-app';
 import { Steiking } from './steiking';
+import { UserStaking } from './user-staking';
 
 export const AirdropPage = () => {
   const wallet = useTonWallet();
@@ -103,6 +105,8 @@ export const AirdropPage = () => {
               </Flex>
               <FormApp mb={5} />
               <Steiking />
+              <AppSeparator mb={5} />
+              <UserStaking />
             </>
           ) : (
             <>

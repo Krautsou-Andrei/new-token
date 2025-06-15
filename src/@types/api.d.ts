@@ -14,6 +14,16 @@ declare module 'api' {
     details?: EventDetails;
   };
 
+  export type Stake = {
+    amount: number;
+    amountReceived: number;
+    createdAt: string;
+    id: number;
+    isActive: boolean;
+    lastReceive: string;
+    userId: number;
+  };
+
   export type PaymentDto = {
     tokenAmount: number;
     currency: string;

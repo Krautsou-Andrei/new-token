@@ -5,3 +5,9 @@ export const formatDateDots = (currentDate: Date) => {
 
   return `${day}.${month}.${year}`;
 };
+
+export const formatDate = (currentDate: string) => {
+  const date = new Date(currentDate);
+
+  return date.toISOString().replace('T', ' ').substring(0, 16);
+};

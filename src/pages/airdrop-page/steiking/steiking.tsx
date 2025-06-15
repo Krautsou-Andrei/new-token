@@ -26,7 +26,6 @@ import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-a
 import useDebounce from '@/shared/lib/utils/hooks/use-debounce';
 import { amountValidateNumber } from '@/shared/lib/utils/validate/amount-validate-number';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
-import { AppSeparator } from '@/shared/ui/app-separator';
 import { AppSpiner } from '@/shared/ui/app-spiner';
 import { AppTextGradient } from '@/shared/ui/app-text-gradient';
 
@@ -265,18 +264,6 @@ export const Steiking = () => {
         >
           Стейкинг
         </AppButtonBorderGradient>
-      </Flex>
-      <AppSeparator mb={5} />
-      <Flex justifyContent={'center'}>
-        <AppTextGradient
-          textAlign={'center'}
-          fontWeight={400}
-          fontSize={{ base: '28px', sm: '40px' }}
-          lineHeight={'100%'}
-          fontFamily={'Rhythmic'}
-        >
-          История транзакций
-        </AppTextGradient>
       </Flex>
     </Box>
   );
