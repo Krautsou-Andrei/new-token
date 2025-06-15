@@ -219,7 +219,12 @@ export const Steiking = () => {
           <SliderThumb />
         </Slider>{' '}
       </Box>
-      <Flex justifyContent={'space-between'} gap={4} mb={{ base: 10, sm: 15 }}>
+      <Flex
+        justifyContent={'space-between'}
+        gap={4}
+        mb={{ base: 10, sm: 15 }}
+        alignItems={'start'}
+      >
         <AppTextGradient
           lineHeight={'100%'}
           fontFamily={'Rhythmic'}
@@ -227,14 +232,12 @@ export const Steiking = () => {
         >
           Доход за 7 дней
         </AppTextGradient>
-        <Flex
-          direction={'column'}
-          justifyContent={'end'}
-          fontFamily={'tektur'}
-          lineHeight={'100%'}
-          gap={{ base: 2, sm: 4 }}
-        >
-          <Text textAlign={'end'} fontSize={{ base: '32px', sm: '64px' }}>
+        <Flex direction={'column'} justifyContent={'end'} fontFamily={'tektur'}>
+          <Text
+            textAlign={'end'}
+            fontSize={{ base: '28px', sm: '48px' }}
+            lineHeight={'100%'}
+          >
             {Number(valueStaking) * 2}
           </Text>
 
