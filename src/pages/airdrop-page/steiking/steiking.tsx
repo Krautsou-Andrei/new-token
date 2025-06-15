@@ -16,11 +16,11 @@ import {
 } from '@chakra-ui/react';
 import { Address } from '@ton/core';
 import { useTonWallet } from '@tonconnect/ui-react';
-import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 
 import { useAuthMe } from '@/shared/api/hooks/auth';
 import { useGetJettonBalances } from '@/shared/api/hooks/jetton/use-get-jetton-balances';
 import { useCreateStaking } from '@/shared/api/hooks/staking/use-create-staking';
+import { useStaking } from '@/shared/api/hooks/staking/use-staking';
 import { DEFAULT, env } from '@/shared/consts';
 import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-address';
 import useDebounce from '@/shared/lib/utils/hooks/use-debounce';
@@ -38,6 +38,7 @@ export const Steiking = () => {
   const { data: user } = useAuthMe();
   const { mutateAsync: createStaking, isPending: isPendingStaking } =
     useCreateStaking();
+  const { functions: functionsStaking } = useStaking();
 
   const JettonMasterAddress = Address.parse(
     env.jettonMasterAddress
@@ -55,7 +56,11 @@ export const Steiking = () => {
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeToken, setActiveToken] = useState(SLIDES[0].title);
+  const [activeToken, setActiveToken] = useState<{
+    title: string;
+    currency?: string;
+    address?: string;
+  }>(SLIDES[0]);
 
   const [valueStaking, setValueStaking] = useState('');
   const [valueStakingSlider, setValueStakingSlider] = useState('');
@@ -73,15 +78,21 @@ export const Steiking = () => {
   }, [debouncedValue]);
 
   const handdleSubmitStaking = async (value: number) => {
-    // if (user) {
-    try {
-      const result = await createStaking({
-        params: { tgId: '1718587413', amount: value },
-      });
-    } catch (error) {
-      /* empty */
+    if (user) {
+      try {
+        const result = await createStaking({
+          params: { tgId: user?.id, amount: value },
+        });
+
+        functionsStaking.sendStaking(
+          result.data.id,
+          value,
+          activeToken.address
+        );
+      } catch (error) {
+        /* empty */
+      }
     }
-    // }
   };
 
   return (
@@ -119,7 +130,7 @@ export const Steiking = () => {
                 style={{ display: 'flex', justifyContent: 'center' }}
               >
                 <Button
-                  px={activeToken === token.title ? 4 : 0}
+                  px={activeToken.title === token.title ? 4 : 0}
                   mt={activeIndex + 2 === index + 1 ? 0 : 2}
                   fontSize={{ base: '20px', sm: '32px' }}
                   variant={'iconDefault'}
@@ -127,11 +138,13 @@ export const Steiking = () => {
                   fontFamily={
                     token.title === SLIDES[1].title ? 'Inter' : 'Rhythmic'
                   }
-                  border={activeToken === token.title ? '1px dashed' : ''}
+                  border={activeToken.title === token.title ? '1px dashed' : ''}
                   borderColor={'background.secondary'}
-                  color={activeToken === token.title ? 'text.secondary' : ''}
+                  color={
+                    activeToken.title === token.title ? 'text.secondary' : ''
+                  }
                   fontWeight={400}
-                  onClick={() => setActiveToken(token.title)}
+                  onClick={() => setActiveToken(token)}
                 >
                   {token.title}
                 </Button>
