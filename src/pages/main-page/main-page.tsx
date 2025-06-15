@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Box, Button, Flex, Radio, RadioGroup } from '@chakra-ui/react';
 import { useNavigate } from '@tanstack/react-router';
 
+import { useAuthMe } from '@/shared/api/hooks/auth';
+import { useGetRefData } from '@/shared/api/hooks/users/use-get-ref-data';
 import { ROUTES } from '@/shared/consts';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppIcon } from '@/shared/ui/app-icon';
@@ -12,8 +14,19 @@ import { friends } from './const';
 import styles from './main.module.css';
 
 export const MainPage = () => {
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState(0);
   const navigate = useNavigate();
+  const { data: user } = useAuthMe();
+  const { data: referrals } = useGetRefData(
+    user?.telegramId,
+    Boolean(user?.id)
+  );
+
+  useEffect(() => {
+    if (referrals) {
+      setValue(referrals.count);
+    }
+  }, [referrals]);
 
   return (
     <AppLayoutBound
@@ -99,40 +112,36 @@ export const MainPage = () => {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              друзья 1/10
+              {`друзья ${value}/${friends.length}`}
             </Box>
-            <RadioGroup onChange={setValue} value={value} mb={'64px'}>
-              <Flex gap={2.5} className={styles.container}>
-                {friends.map((_friend, index) => (
-                  <Radio
-                    fontSize={'2px'}
-                    key={index}
-                    value={String(index + 1)}
-                    w="full"
-                    h={'8px'}
-                    maxH={'8px'}
-                    rounded="48px"
-                    sx={{
-                      background: `${String(index + 1) <= value ? 'linear-gradient(90deg,  #00FF99,#7B00FF)' : '#2B314E'}`,
+            <Flex gap={2.5} className={styles.container} mb={'64px'}>
+              {friends.map((_friend, index) => (
+                <Button
+                  variant={'iconDefault'}
+                  size={'fit'}
+                  key={index}
+                  value={String(index + 1)}
+                  w="full"
+                  h={'8px'}
+                  maxH={'8px'}
+                  rounded="48px"
+                  sx={{
+                    background: `${index + 1 <= value ? 'linear-gradient(90deg,  #00FF99,#7B00FF)' : '#2B314E'}`,
+                    color: 'white',
+                    border: 'none',
+                    display: 'block',
+                    width: '100%',
+                    _checked: {
+                      background: 'linear-gradient(90deg, #7B00FF, #00FF99)',
                       color: 'white',
-                      border: 'none',
-                      display: 'block',
-                      width: '100%',
-                      _checked: {
-                        background: 'linear-gradient(90deg, #7B00FF, #00FF99)',
-                        color: 'white',
-                      },
-                      _focus: {
-                        boxShadow: 'none',
-                      },
-                      _hover: {
-                        background: 'linear-gradient(90deg, #7B00FF, #00FF99)',
-                      },
-                    }}
-                  />
-                ))}
-              </Flex>
-            </RadioGroup>
+                    },
+                    _focus: {
+                      boxShadow: 'none',
+                    },
+                  }}
+                />
+              ))}{' '}
+            </Flex>
           </Box>
           <Button
             rounded={0}
