@@ -12,7 +12,7 @@ export type GetAllStakingUserConfig = RequestConfig<{ tgId: string }> & {
 export type GetReferralStakingConfig = RequestConfig<{ tgId: string }> & {
   signal?: AbortSignal;
 };
-export type StakingConfig = RequestConfig<{ tgId: string }> & {
+export type StakingConfig = RequestConfig<{ tgId: string; amount: number }> & {
   signal?: AbortSignal;
 };
 export type StakingClaimConfig = RequestConfig<{ tgId: string }> & {

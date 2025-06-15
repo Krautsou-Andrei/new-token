@@ -16,22 +16,28 @@ import {
 } from '@chakra-ui/react';
 import { Address } from '@ton/core';
 import { useTonWallet } from '@tonconnect/ui-react';
+import { useWebApp } from '@vkruglikov/react-telegram-web-app';
 
+import { useAuthMe } from '@/shared/api/hooks/auth';
 import { useGetJettonBalances } from '@/shared/api/hooks/jetton/use-get-jetton-balances';
+import { useCreateStaking } from '@/shared/api/hooks/staking/use-create-staking';
 import { DEFAULT, env } from '@/shared/consts';
 import { getBalanceJettonAddress } from '@/shared/lib/utils/get-balance-jetton-address';
 import useDebounce from '@/shared/lib/utils/hooks/use-debounce';
 import { amountValidateNumber } from '@/shared/lib/utils/validate/amount-validate-number';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppSeparator } from '@/shared/ui/app-separator';
+import { AppSpiner } from '@/shared/ui/app-spiner';
 import { AppTextGradient } from '@/shared/ui/app-text-gradient';
 
 import { SLIDES } from '../form-app/const';
 
 export const Steiking = () => {
   const wallet = useTonWallet();
-  // const WebApp = useWebApp();
-  // const telegramId = WebApp?.initDataUnsafe?.user?.id;
+
+  const { data: user } = useAuthMe();
+  const { mutateAsync: createStaking, isPending: isPendingStaking } =
+    useCreateStaking();
 
   const JettonMasterAddress = Address.parse(
     env.jettonMasterAddress
@@ -66,8 +72,21 @@ export const Steiking = () => {
     setValueStakingSlider(debouncedValue);
   }, [debouncedValue]);
 
+  const handdleSubmitStaking = async (value: number) => {
+    // if (user) {
+    try {
+      const result = await createStaking({
+        params: { tgId: '1718587413', amount: value },
+      });
+    } catch (error) {
+      /* empty */
+    }
+    // }
+  };
+
   return (
     <Box>
+      {isPendingStaking && <AppSpiner />}
       <Flex justifyContent={'center'} w={'full'}>
         <AppTextGradient
           fontSize={{ base: '48px', sm: '64px' }}
@@ -225,7 +244,11 @@ export const Steiking = () => {
         </Flex>
       </Flex>
       <Flex justifyContent={'center'} w={'full'} mb={{ base: 15, sm: 20 }}>
-        <AppButtonBorderGradient>Стейкинг</AppButtonBorderGradient>
+        <AppButtonBorderGradient
+          onClick={() => handdleSubmitStaking(Number(valueStaking))}
+        >
+          Стейкинг
+        </AppButtonBorderGradient>
       </Flex>
       <AppSeparator mb={5} />
       <Flex justifyContent={'center'}>
