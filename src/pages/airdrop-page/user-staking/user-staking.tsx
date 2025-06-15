@@ -52,7 +52,7 @@ export const UserStaking = () => {
                 </Text>
                 <Text>{formatDate(stake.createdAt)}</Text>
               </Flex>
-              <Flex direction={'column'} gap={2}>
+              <Flex direction={'column'} gap={2} alignItems={'end'}>
                 <Text
                   color={'text.white'}
                 >{`${stake.amountReceived > 0 ? stake.amountReceived : stake.amount} Anon`}</Text>
