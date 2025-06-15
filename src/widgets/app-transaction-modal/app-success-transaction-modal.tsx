@@ -1,9 +1,12 @@
+import { SLIDES } from '@/pages/airdrop-page/form-app/const';
+
 import { memo, useEffect, useState } from 'react';
 
 import { Box, Flex, Input } from '@chakra-ui/react';
 
 import { useCreatePayment } from '@/shared/api/hooks/payment/use-create-payment';
 import { useBuyStore } from '@/shared/lib/persistance';
+import { useModalStore } from '@/shared/lib/persistance/modal.store';
 import { amountValidateNumber } from '@/shared/lib/utils/validate/amount-validate-number';
 import { AppButtonBorderGradient } from '@/shared/ui/app-button-border-gradient';
 import { AppModal } from '@/shared/ui/app-modal';
@@ -18,6 +21,7 @@ interface AppTransactionProps {
 export const AppTransactionModal = memo(
   ({ isOpen, onClose }: AppTransactionProps) => {
     const { link } = useBuyStore();
+    const { currency, setCurrency } = useModalStore();
 
     const [value, setValue] = useState('');
     const {
@@ -57,8 +61,14 @@ export const AppTransactionModal = memo(
             py={'10px'}
             fontSize={'32px'}
             onClick={() => {
-              if (value) {
-                cretePayment({ params: { tokenAmount: +value } });
+              if (value && currency) {
+                cretePayment({
+                  params: {
+                    tokenAmount: +value,
+                    currency: currency.toUpperCase(),
+                  },
+                });
+                setCurrency(undefined);
               }
             }}
           >

@@ -13,6 +13,7 @@ import { SLIDES } from '../../const';
 type SlideAppProps = BoxProps & {
   title: string;
   balance?: string;
+  currency?: string;
   address?: string;
 };
 
@@ -20,9 +21,10 @@ export const SlideApp = ({
   title,
   balance,
   address,
+  currency,
   ...props
 }: SlideAppProps) => {
-  const { openSuccessModal } = useModalStore();
+  const { openSuccessModal, setCurrency } = useModalStore();
   const wallet = useTonWallet();
 
   const { data: account } = useGetAccount(
@@ -58,7 +60,10 @@ export const SlideApp = ({
           variant={'iconDefault'}
           size={'fit'}
           fontFamily={title === SLIDES[1].title ? 'Inter' : 'Rhythmic'}
-          onClick={() => openSuccessModal()}
+          onClick={() => {
+            openSuccessModal();
+            setCurrency(currency);
+          }}
           color={'inherit'}
         >
           <Text> {title} + </Text>

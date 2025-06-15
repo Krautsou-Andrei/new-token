@@ -14,12 +14,14 @@ export interface ModalState {
   isConfety: boolean;
   isSuccessModal: boolean;
   isOpenModalByBIt: boolean;
+  currency?: string;
   setIsConfety: (isConfety: boolean) => void;
   setSucceessModal: (modal: Modal) => void;
   openModalByBit: () => void;
   closeModalByBit: () => void;
   openSuccessModal: () => void;
   closeSuccessModal: () => void;
+  setCurrency: (currency?: string) => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -28,8 +30,10 @@ export const useModalStore = create<ModalState>((set) => ({
   isOpenModalByBIt: false,
   modal: undefined,
   isConfety: false,
+  currency: undefined,
 
   setIsConfety: (isConfety: boolean) => set({ isConfety: isConfety }),
+  setCurrency: (currency?: string) => set({ currency: currency }),
   openSuccessModal: () => set({ isSuccessModal: true }),
   closeSuccessModal: () => set({ isSuccessModal: false, modal: undefined }),
   setSucceessModal: (modal: Modal) => set({ modal: modal }),

@@ -9,14 +9,10 @@ export type CreatePaymentConfig = RequestConfig<PaymentDto>;
 export const createPayment = ({ params, config }: CreatePaymentConfig) => {
   const headers = addAuthorizationHeader(config);
 
-  return apiInstance.post<string>(
-    '/payment',
-    {},
-    {
-      ...headers,
-      signal: config?.signal,
-    }
-  );
+  return apiInstance.post<string>('/payment', params, {
+    ...headers,
+    signal: config?.signal,
+  });
 };
 
 export type GetPresaleTokenSumConfig = { userId: string; signal?: AbortSignal };

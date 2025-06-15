@@ -16,6 +16,7 @@ declare module 'api' {
 
   export type PaymentDto = {
     tokenAmount: number;
+    currency: string;
   };
 
   export type presaleTokensSumDataResponse = {
